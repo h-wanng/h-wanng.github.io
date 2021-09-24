@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python3 on Docs</title>
+    <link>https://h-wanng.github.io/categories/python3/</link>
+    <description>Recent content in Python3 on Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/categories/python3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS Python3</title>
+      <link>https://h-wanng.github.io/p/ros-python3/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://h-wanng.github.io/p/ros-python3/</guid>
+      <description>错误介绍 在Python3中使用ROS会出现cv_bridge和tf报错问题 python 3.x - Unable to use cv_bridge with ROS Kinetic and Python3 - Stack Overflow
+python3 cv bridge报错
+ImportError: dynamic module does not define module export function (PyInit_cv_bridge_boost) tf tf2报错
+ImportError: dynamic module does not define module export function (PyInit__tf2)  解决的关键在于使用python3编译，可以通过下面参数进行cmake
+ -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so 这里介绍常用的catkin工具进行编译
+ROS Wiki 介绍 ROS tf Package ROS cv_bridge Package
+CV Bridge 依赖  python-catkin-tools catkin工具
+python3-dev 和 python3-catkin-pkg-modules 用于编译
+python3-numpy 和 python3-yaml cv_bridge依赖</description>
+    </item>
+    
+  </channel>
+</rss>

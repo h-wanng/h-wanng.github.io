@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在Python3中使用ROS(cv_bridge和tf)'><title>ROS Python3</title>
+
+<link rel='canonical' href='https://h-wanng.github.io/p/ros-python3/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ROS Python3'>
+<meta property='og:description' content='在Python3中使用ROS(cv_bridge和tf)'>
+<meta property='og:url' content='https://h-wanng.github.io/p/ros-python3/'>
+<meta property='og:site_name' content='Docs'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ROS' /><meta property='article:tag' content='Python3' /><meta property='article:tag' content='cv_bridge' /><meta property='article:tag' content='tf' /><meta property='article:published_time' content='2021-09-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-09-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://h-wanng.github.io/p/ros-python3/python3_ros.png' />
+<meta name="twitter:title" content="ROS Python3">
+<meta name="twitter:description" content="在Python3中使用ROS(cv_bridge和tf)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://h-wanng.github.io/p/ros-python3/python3_ros.png' />
+    <link rel="shortcut icon" href="/icons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://h-wanng.github.io" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ros-python3/">
+                <img src="/p/ros-python3/python3_ros_hu16c8367a06a53a298b69b7bfafee1d45_38649_800x0_resize_box_3.png"
+                        srcset="/p/ros-python3/python3_ros_hu16c8367a06a53a298b69b7bfafee1d45_38649_800x0_resize_box_3.png 800w, /p/ros-python3/python3_ros_hu16c8367a06a53a298b69b7bfafee1d45_38649_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post ROS Python3" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ros/" style="background-color: #1c2a49; color: #fff;">
+                ROS
+            </a>
+        
+            <a href="/categories/python3/" style="background-color: #fdcf40; color: #3872a4;">
+                Python3
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/ros-python3/">ROS Python3</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        在Python3中使用ROS(cv_bridge和tf)
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 20, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="错误介绍">错误介绍</h2>
+<h3 id="在python3中使用ros会出现cv_bridge和tf报错问题">在Python3中使用ROS会出现cv_bridge和tf报错问题</h3>
+<p><a class="link" href="https://stackoverflow.com/questions/49221565/unable-to-use-cv-bridge-with-ros-kinetic-and-python3?rq=1"  target="_blank" rel="noopener"
+    >python 3.x - Unable to use cv_bridge with ROS Kinetic and Python3 - Stack Overflow</a></p>
+<p><strong>python3 cv bridge报错</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ImportError: dynamic module does not define module <span class="nb">export</span> <span class="k">function</span> <span class="o">(</span>PyInit_cv_bridge_boost<span class="o">)</span>
+</code></pre></div><p><strong>tf tf2报错</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ImportError: dynamic module does not define module <span class="nb">export</span> <span class="k">function</span> <span class="o">(</span>PyInit__tf2<span class="o">)</span>
+</code></pre></div><blockquote>
+<p>解决的关键在于使用python3编译，可以通过下面参数进行cmake</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">-DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</code></pre></div><p>这里介绍常用的catkin工具进行编译</p>
+<h3 id="ros-wiki-介绍">ROS Wiki 介绍</h3>
+<p><a class="link" href="http://wiki.ros.org/tf"  target="_blank" rel="noopener"
+    >ROS tf Package</a>     <a class="link" href="https://wiki.ros.org/cv_bridge"  target="_blank" rel="noopener"
+    >ROS cv_bridge Package</a></p>
+<h2 id="cv-bridge">CV Bridge</h2>
+<h3 id="依赖">依赖</h3>
+<blockquote>
+<p><code>python-catkin-tools</code> catkin工具</p>
+<p><code>python3-dev</code> 和 <code>python3-catkin-pkg-modules</code> 用于编译</p>
+<p><code>python3-numpy</code> 和 <code>python3-yaml</code> cv_bridge依赖</p>
+<p><code>ros-melodic-cv-bridge</code> 通过 cv_bridge ros 包来安装和cv_bridge相关的依赖，在安装ROS过程中可能已经安装</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-cv-bridge
+</code></pre></div><h3 id="创建catkin工作空间">创建catkin工作空间</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p cvbdg_ws/src
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> cvbdg_ws
+catkin init
+</code></pre></div><h3 id="配置catkin编译参数">配置catkin编译参数</h3>
+<p>设置使用python3编译</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin config -DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</code></pre></div><h3 id="设置编译安装位置">设置编译安装位置</h3>
+<p>位于$CATKIN_WORKSPACE/install 目录下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin config --install
+</code></pre></div><h3 id="clone-cv_bridge-源码">clone cv_bridge 源码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
+</code></pre></div><h3 id="检查版本">检查版本</h3>
+<p>检查系统中安装的软件包版本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-cache show ros-kinetic-cv-bridge <span class="p">|</span> grep Version
+<span class="c1"># 结果</span>
+Version: 1.13.0-0bionic.20210505.0322380
+</code></pre></div><p>检查git 仓库中是否有对应版本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> src/vision_opencv/
+git checkout 1.13.0
+<span class="c1">#返回工作空间主目录</span>
+<span class="nb">cd</span> ../../
+</code></pre></div><h3 id="编译cv-bridge">编译cv bridge</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin build cv_bridge
+</code></pre></div><h3 id="设置环境变量">设置环境变量</h3>
+<p>使用 <code>--extend</code> 命令source附加环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> install/setup.bash --extend
+</code></pre></div><p>因为每次使用都需要这样的source操作，可以将其加入 <code>.bashrc</code> 中打开终端自动执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/cvbdg_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
+</code></pre></div><h3 id="测试">测试</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ python3
+
+Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span> 
+<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
+Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; from cv_bridge.boost.cv_bridge_boost import getCvType
+&gt;&gt;&gt;
+</code></pre></div><p>如果没有再出现错误即编译安装成功</p>
+<h2 id="tf-tf2">TF TF2</h2>
+<h3 id="依赖-1">依赖</h3>
+<p>和安装编译cv bridge相同，安装部分依赖</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-geometry ros-melodic-geometry2
+</code></pre></div><h3 id="创建catkin工作空间-1">创建catkin工作空间</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p tf_ws/src
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> tf_ws
+catkin init
+</code></pre></div><h3 id="配置catkin编译参数-1">配置catkin编译参数</h3>
+<p>设置使用python3编译</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin config -DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</code></pre></div><h3 id="设置编译安装位置-1">设置编译安装位置</h3>
+<p>位于$CATKIN_WORKSPACE/install 目录下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin config --install
+</code></pre></div><h3 id="clone-源码">clone 源码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone -b melodic-devel https://github.com/ros/geometry
+git clone -b melodic-devel https://github.com/ros/geometry2
+</code></pre></div><h3 id="检查版本-1">检查版本</h3>
+<p>检查系统中安装的软件包版本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-cache show ros-melodic-geometry <span class="p">|</span> grep Version
+<span class="c1"># 结果</span>
+Version: 1.12.1-1bionic.20210505.035349
+</code></pre></div><h3 id="编译tf-tf2">编译tf tf2</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">catkin build
+</code></pre></div><h3 id="环境变量">环境变量</h3>
+<p>使用 <code>--extend</code> 命令source附加环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> install/setup.bash --extend
+</code></pre></div><p>因为每次使用都需要这样的source操作，可以将其加入 <code>.bashrc</code> 中打开终端自动执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/tf_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
+</code></pre></div><h3 id="测试-1">测试</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ python3
+
+Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span> 
+<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
+Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; import tf
+&gt;&gt;&gt;
+</code></pre></div><p>如果没有再出现错误即编译安装成功</p>
+<blockquote>
+<p>另外，可以通过源码编译的方式安装ROS，使ROS支持Python3</p>
+<p>如：<a class="link" href="https://www.miguelalonsojr.com/blog/robotics/ros/python3/2019/08/20/ros-melodic-python-3-build.html"  target="_blank" rel="noopener"
+    >Building ROS Melodic with Python3 support</a></p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ros/">ROS</a>
+        
+            <a href="/tags/python3/">Python3</a>
+        
+            <a href="/tags/cv_bridge/">cv_bridge</a>
+        
+            <a href="/tags/tf/">tf</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/ros-melodic-installation/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ros-melodic-installation/ros-melodic.97c2895adad05a882480d28001f957b6_hua085e8554c6c017ac0f31c58773cb8ae_372060_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="" 
+                        data-hash="md5-l8KJWtrQWogkgNKAAflXtg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ROS Melodic Installation</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq"],"lang":"zh-CN","locale":{"admin":"Admin"},"requiredMeta":["name","email","url"],"serverURL":"https://io-pages-waline-473jlu2en-h-wanng.vercel.app"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 Docs
+    </section>
+    
+    <section class="powerby">
+        
+            W' Docs <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#错误介绍">错误介绍</a>
+      <ol>
+        <li><a href="#在python3中使用ros会出现cv_bridge和tf报错问题">在Python3中使用ROS会出现cv_bridge和tf报错问题</a></li>
+        <li><a href="#ros-wiki-介绍">ROS Wiki 介绍</a></li>
+      </ol>
+    </li>
+    <li><a href="#cv-bridge">CV Bridge</a>
+      <ol>
+        <li><a href="#依赖">依赖</a></li>
+        <li><a href="#创建catkin工作空间">创建catkin工作空间</a></li>
+        <li><a href="#配置catkin编译参数">配置catkin编译参数</a></li>
+        <li><a href="#设置编译安装位置">设置编译安装位置</a></li>
+        <li><a href="#clone-cv_bridge-源码">clone cv_bridge 源码</a></li>
+        <li><a href="#检查版本">检查版本</a></li>
+        <li><a href="#编译cv-bridge">编译cv bridge</a></li>
+        <li><a href="#设置环境变量">设置环境变量</a></li>
+        <li><a href="#测试">测试</a></li>
+      </ol>
+    </li>
+    <li><a href="#tf-tf2">TF TF2</a>
+      <ol>
+        <li><a href="#依赖-1">依赖</a></li>
+        <li><a href="#创建catkin工作空间-1">创建catkin工作空间</a></li>
+        <li><a href="#配置catkin编译参数-1">配置catkin编译参数</a></li>
+        <li><a href="#设置编译安装位置-1">设置编译安装位置</a></li>
+        <li><a href="#clone-源码">clone 源码</a></li>
+        <li><a href="#检查版本-1">检查版本</a></li>
+        <li><a href="#编译tf-tf2">编译tf tf2</a></li>
+        <li><a href="#环境变量">环境变量</a></li>
+        <li><a href="#测试-1">测试</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
