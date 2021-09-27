@@ -34,7 +34,7 @@ python3-numpy 和 python3-yaml cv_bridge依赖</description>
 (1) ROS Ubuntu18.04对应ROS Melodic
 melodic/Installation/Ubuntu - ROS Wiki
 (2) catkin_tools sudo apt-get install python3-catkin-tools 1. 安装 源码安装基于 ROS Melodic 和 Gazebo9 的 uuv-simulator.
-(1) 创建ROS工作空间 mkdir -p ~/catkin_ws/src cd ~/catkin_ws/src (2) 初始化catkin工作空间 cd ~/catkin_ws catkin init (3) clone源码 cd ~/catkin_ws/src git clone https://github.com/uuvsimulator/uuv_simulator.git # clone 失败，使用国内 gitee 地址 git clone https://gitee.com/h_wanng/uuv_simulator.git (4) 安装 cd ~/catkin_ws rosdep install --from-paths src --ignore-src --rosdistro=melodic -y -- skip-keys &amp;#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control g azebo_ros_pkgs&amp;#34; (5) 编译 cd ~/catkin_ws catkin_make install  Note: 编译报错多重试几次，大多和内存相关</description>
+(1) 创建ROS工作空间 mkdir -p ~/catkin_ws/src cd ~/catkin_ws/src (2) 初始化catkin工作空间 cd ~/catkin_ws catkin init (3) clone源码 cd ~/catkin_ws/src git clone https://github.com/uuvsimulator/uuv_simulator.git # clone 失败，使用国内 gitee 地址 # git clone https://gitee.com/h_wanng/uuv_simulator.git (4) 安装 cd ~/catkin_ws rosdep install --from-paths src --ignore-src --rosdistro=melodic -y -- skip-keys &amp;#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&amp;#34; (5) 编译 cd ~/catkin_ws catkin_make install  Note: 编译报错多重试几次，大多和内存相关</description>
     </item>
     
     <item>

@@ -20,6 +20,12 @@
     <loc>https://h-wanng.github.io/post/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://h-wanng.github.io/tags/python/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://h-wanng.github.io/categories/python/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://h-wanng.github.io/tags/python3/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -41,13 +47,13 @@
     <loc>https://h-wanng.github.io/tags/tf/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://h-wanng.github.io/p/uuv-simulator/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://h-wanng.github.io/tags/uuv-simulator/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://h-wanng.github.io/categories/uuv-simulator/</loc>
-    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://h-wanng.github.io/p/uuv-simulator/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://h-wanng.github.io/p/ros-melodic-installation/</loc>

@@ -147,10 +147,10 @@ catkin init
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/catkin_ws/src
 git clone https://github.com/uuvsimulator/uuv_simulator.git
 &lt;span class=&#34;c1&#34;&gt;# clone 失败，使用国内 gitee 地址&lt;/span&gt;
-git clone https://gitee.com/h_wanng/uuv_simulator.git
+&lt;span class=&#34;c1&#34;&gt;# git clone https://gitee.com/h_wanng/uuv_simulator.git&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;4-安装&#34;&gt;(4) 安装&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/catkin_ws
-rosdep install --from-paths src --ignore-src --rosdistro&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;melodic -y -- skip-keys &lt;span class=&#34;s2&#34;&gt;&amp;#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control g azebo_ros_pkgs&amp;#34;&lt;/span&gt;
+rosdep install --from-paths src --ignore-src --rosdistro&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;melodic -y -- skip-keys &lt;span class=&#34;s2&#34;&gt;&amp;#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5-编译&#34;&gt;(5) 编译&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/catkin_ws
 catkin_make install
