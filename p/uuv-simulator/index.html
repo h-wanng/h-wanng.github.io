@@ -169,7 +169,7 @@ git clone https://github.com/uuvsimulator/uuv_simulator.git
 <span class="c1"># git clone https://gitee.com/h_wanng/uuv_simulator.git</span>
 </code></pre></div><h3 id="4-安装">(4) 安装</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/catkin_ws
-rosdep install --from-paths src --ignore-src --rosdistro<span class="o">=</span>melodic -y -- skip-keys <span class="s2">&#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&#34;</span>
+rosdep install --from-paths src --ignore-src --rosdistro<span class="o">=</span>melodic -y --skip-keys <span class="s2">&#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&#34;</span>
 </code></pre></div><h3 id="5-编译">(5) 编译</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/catkin_ws
 catkin_make install
