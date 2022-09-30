@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Vue的一些问题记录'><title>Vue Issues</title>
+
+<link rel='canonical' href='https://h-wanng.github.io/p/vue-issues/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='Vue Issues'>
+<meta property='og:description' content='Vue的一些问题记录'>
+<meta property='og:url' content='https://h-wanng.github.io/p/vue-issues/'>
+<meta property='og:site_name' content='Docs'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Vue' /><meta property='article:published_time' content='2022-09-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-09-05T00:00:00&#43;00:00'/><meta property='og:image' content='https://h-wanng.github.io/img/default_pic.jpg' />
+
+
+    <link rel="shortcut icon" href="/img/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hudc178376c1c1fe36f3b44527b9ab8a32_46092_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💤</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Docs</a></h1>
+            <h2 class="site-description">
+                <div>
+                    <span id="poem_sentence" style="display:-moz-inline-box; display:inline-block; ">
+                        正在加载今日诗词....
+                    </span><br>
+                    <span id="poem_info" style="display: inline-block;margin-top: 10px; float:right;">
+                        ....
+                    </span>
+                </div>
+                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                <script type="text/javascript">
+                    jinrishici.load(function(result) {
+                    var sentence = document.querySelector("#poem_sentence")
+                    var info = document.querySelector("#poem_info")
+                    sentence.innerHTML = result.data.content
+                    info.innerHTML = '——' + result.data.origin.author
+                    });
+                </script>
+            </h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/h-wanng'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://h-wanng.github.io/en/" >English</option>
+                        
+                            <option value="https://h-wanng.github.io/" selected>中文</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/vue/" >
+                Vue
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vue-issues/">Vue Issues</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Vue的一些问题记录
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 05, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="ruoyi-字典取值并回显到页面">Ruoyi 字典取值并回显到页面</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;职级&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">prop</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">:show-overflow-tooltip</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">slot-scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">dict-tag</span> <span class="na">:options</span><span class="o">=</span><span class="s">&#34;dict.type.job_grade_type&#34;</span> <span class="na">:value</span><span class="o">=</span><span class="s">&#34;scope.row.job_grade&#34;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 <code>slot-scope</code> <code>scope.row.job_grade</code> 获取当前column的prop，在字典中获取对应数据（label）</p>
+<h2 id="ruoyi-vue下拉框取字典表值回显为数字不是文字">Ruoyi vue下拉框取字典表值回显为数字不是文字</h2>
+<p>业务场景为点击<code>el-table-column</code>中的<code>修改</code>操作弹出dialog并自动填充当前行的实体信息。Dialog中表单其中一项为下拉框，数据绑定（v-model）的值为value，需要根据value从字典中取对应的label并回显。</p>
+<p>具体实现中出现回显的是数字而非label文本。</p>
+<p>原因为Ruoyi中字典数据表的键和值均为 <code>varchar</code> 类型，而自己的数据表相关字段为 <code>int</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="o">`</span><span class="n">dict_label</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典标签&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span><span class="o">`</span><span class="n">dict_value</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典键值&#39;</span><span class="p">,</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>解决方法：</p>
+<ol>
+<li>将数据表（实体）中的字段改为varchar。</li>
+<li>将value的值用Number包起来：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-select</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;form.job_grade&#34;</span> <span class="na">clearable</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;请选择职级&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">el-option</span>
+        <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;dict in dict.type.job_grade_type&#34;</span>
+        <span class="na">:key</span><span class="o">=</span><span class="s">&#34;dict.value&#34;</span>
+        <span class="na">:label</span><span class="o">=</span><span class="s">&#34;dict.label&#34;</span>
+        <span class="na">:value</span><span class="o">=</span><span class="s">&#34;Number(dict.value)&#34;</span>
+        <span class="p">&gt;&lt;/</span><span class="nt">el-option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">el-select</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="js中null和undefined">JS中null和undefined</h2>
+<p>遇见一个有意思的小问题。
+业务场景为Dialog中表单的数据提交，id没有值，后端通过雪花算法生成自增id，前端中JS异步传值（整个表单的值）。
+当表单参数中有初始化，且id默认设为null时，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>后端接收到的数据为<code>&quot;id&quot;: nil</code>。将id设置为'',也是一样的情况，最终导致，插入（insert）数据报错，错误信息大致为 字段被定义两次。</p>
+<p>解决办法就是不初始化参数，或将其初始化为undefined。</p>
+<p><a class="link" href="https://blog.csdn.net/m0_47135993/article/details/119800231"  target="_blank" rel="noopener"
+    >undefined和null的区别</a>:
+6、undefined和null的用途
+null表示没有对象，即不应该有值，经常用作函数的参数，或作为原型链的重点。</p>
+<p>undefined表示缺少值，即应该有值，但是还没有赋予（变量提升时默认会赋值为undefined，函数参数未提供默认为undefined，函数的返回值默认为undefined）
+但不建议显式赋值为undefined：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">建议：无论在什么情况下都没有必要将一个变量显示的赋值为undefined。如果需要定义某个变量来保存将来要使用的对象，应该将其初始化为null.
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="vue中标签中拼接变量">Vue中标签中拼接变量</h2>
+<p>通过<code>v-bind</code>，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">v-bind:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="页面返回后刷新数据">页面返回后刷新数据</h2>
+<p>使用钩子函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">activated</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//获取数据方法
+</span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span>
+<span class="p">},</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="父子组件的值传递">父子组件的值传递</h2>
+<p>TODO</p>
+<p>props</p>
+<h2 id="vue组件中的css-scoped">Vue组件中的CSS scoped</h2>
+<p>vue组件中，style标签中属性<code>scoped</code>。该属性会让该组件下的css样式只适用于本组件，而不会影响全局组件。</p>
+<h2 id="vue-element-ui-表格显示序号">Vue element ui 表格显示序号</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">fixed</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;序号&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{scope.$index + 1}} <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="保存前端文件列表的问题">保存前端文件列表的问题</h2>
+<p>前端的上传的文件地址列表保存到数据库，后端报sql异常
+<code>Incorrect string value: '\xAC\xED\x00\x05sr...' for column 'appendix' at row 1</code></p>
+<p>原因竟是没有<code>toString()</code> :D 列表 -&gt; varchar？</p>
+<h2 id="vue动态加载组件问题">Vue动态加载组件问题</h2>
+<p>已知webpack支持动态加载，es6新增import()函数支持动态加载，import()返回一个 Promise 对象</p>
+<p><a class="link" href="https://blog.csdn.net/qq_38211205/article/details/124348464"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/qq_38211205/article/details/124348464</a></p>
+<p>动态加载组件可以写成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">component</span> <span class="o">:</span><span class="nx">is</span><span class="o">=</span><span class="s2">&#34;component&#34;</span>
+        <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="s2">&#34;component&#34;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="err">/template&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
+  <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">],</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">component</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">loader</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="sb">`@components/demo/demoTemplates/</span><span class="si">${</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">()</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@components/demo/demoTemplates/defaultDemo&#39;</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但在实际使用中发现，import并不是完全动态的，或者说webpack并不能完全的动态加载，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="sb">`@/components/forms/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="c1">// 或是
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="s1">&#39;@/components/forms/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这种情况并不能实现动态加载，”webpack 编译es6 动态引入 import() 时不能传入变量“，也就是webpack并不能实现完全动态。可以通过字符串模板来提供部分信息给webpack，例如import(`@/views/${path}`), 这样编译时会编译所有@/views下的模块，但运行时确定path的值才会加载，从而实现懒加载。</p>
+<p>个人猜想是webpack有一部分路径作为根据才能匹配模块进行编译，否则它并不知道要加载编译哪些模块。</p>
+<p>但在如此import之后在我的项目中依旧报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vue.runtime.esm.js?2b0e:619 [Vue warn]: Failed to resolve async component: function () {
+          return Promise.resolve(&#34;@/&#34;.concat(_this.curPath)).then(function (s) {
+            return (0, _interopRequireWildcard2.default)(__webpack_require__(&#34;./src/components/CommonForm sync recursive&#34;)(s));
+          });
+        }
+Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>sync recursive 递归？不太理解</p>
+<p>网上查到的类似的解决办法有（发现的顺序是3-1-2）：</p>
+<ol>
+<li>缺少webpack-cli，webpack4.x中部分功能交给webpack-cli了，
+<ul>
+<li>npm安装webpack-cli报错依旧，未解决。</li>
+</ul>
+</li>
+<li>import属于异步引用组件，需要babel-loader处理
+<ul>
+<li>查看项目中有这个模块，且在babel配置文件中发现已配置该插件，还有注释内容</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">// babel-plugin-dynamic-import-node plugin only does one thing by converting all import() to require().
+// This plugin can significantly increase the speed of hot updates, when you have a large number of pages.
+</code></pre></td></tr></table>
+</div>
+</div>这和下一点使用的方式竟还有些交集。</li>
+<li><a class="link" href="https://blog.csdn.net/c19910323/article/details/106754307/"  target="_blank" rel="noopener"
+    >如何解决 Critical dependency: the request of a dependency is an expression ？</a> webpack4中动态import不支持变量方式。使用require加载，Promise.resolve(require(`@/views/${view}`).default)</li>
+</ol>
+<p>最终是使用require加载解决的。总结这些是觉得问题很奇怪在尝试解决import，因为感觉import和require二者并无太大区别。最终妥协并接纳了第三点中webpack4中动态import不支持变量方式的说法。</p>
+<p>使用require的方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用require中也验证了<code>不能完全动态加载</code>说法，因此让路径中一部分作为模板<code>@/views/</code>来匹配。</p>
+<p>在解决问题的过程中好像看到import()和require()其中一个区别是前者是异步，后者是同步加载。</p>
+<p>XD 让我心痒痒的，在把require抽成方法后使用async await可以让他变成异步吗？</p>
+<h2 id="捕获require-module_not_found-异常">捕获require MODULE_NOT_FOUND 异常</h2>
+<p><a class="link" href="https://stackoverflow.com/questions/13197795/handle-errors-thrown-by-require-module-in-node-js"  target="_blank" rel="noopener"
+    >Handle errors thrown by require() module in node.js</a></p>
+<p>上节使用<code>require</code>加载模块，如果传入的路径错误require抛出异常(console中)，组件固然也无法正常加载，弹出的页面/对话框就是空白的，用户体验肯定是很不好的。
+作为后端最先能想到的就是try-catch-finally，理想的逻辑是出错跳转/展示默认页面告知用户出错情况及可能原因。</p>
+<p>因此优雅的解决方法之一，将require抽成方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如此，在模块加载不到的情况下返回默认组件，其他错误情况下，抛出异常。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">async</span> <span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>听说async await能让方法变异步？改造一下吧，这样方法会等待<code>require('@/views/'+modulePath).default</code>执行成功并<code>Promise.resolve(）</code>这样一下，返回promise。那我调用就可以这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">requireMod</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>不用自己这样封装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>作为前端门外汉，目前还尚未有时间深入了解<code>Promise</code>。这个问题就到此吧。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/vue/">Vue</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.1.0/tieba"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":null},"login":"disable","requiredMeta":["name","email"],"serverURL":"https://io-pages-waline-mitlh6u4i-h-wanng.vercel.app/","wordLimit":200});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Docs
+    </section>
+    
+    <section class="powerby">
+        
+            W' Docs/Blog <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#ruoyi-字典取值并回显到页面">Ruoyi 字典取值并回显到页面</a></li>
+    <li><a href="#ruoyi-vue下拉框取字典表值回显为数字不是文字">Ruoyi vue下拉框取字典表值回显为数字不是文字</a></li>
+    <li><a href="#js中null和undefined">JS中null和undefined</a></li>
+    <li><a href="#vue中标签中拼接变量">Vue中标签中拼接变量</a></li>
+    <li><a href="#页面返回后刷新数据">页面返回后刷新数据</a></li>
+    <li><a href="#父子组件的值传递">父子组件的值传递</a></li>
+    <li><a href="#vue组件中的css-scoped">Vue组件中的CSS scoped</a></li>
+    <li><a href="#vue-element-ui-表格显示序号">Vue element ui 表格显示序号</a></li>
+    <li><a href="#保存前端文件列表的问题">保存前端文件列表的问题</a></li>
+    <li><a href="#vue动态加载组件问题">Vue动态加载组件问题</a></li>
+    <li><a href="#捕获require-module_not_found-异常">捕获require MODULE_NOT_FOUND 异常</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

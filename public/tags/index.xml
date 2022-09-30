@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Docs</title>
+        <link>https://h-wanng.github.io/tags/</link>
+        <description>Recent content in Tags on Docs</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java</title>
+        <link>https://h-wanng.github.io/tags/java/</link>
+        <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/java/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vue</title>
+        <link>https://h-wanng.github.io/tags/vue/</link>
+        <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/vue/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Installation</title>
+        <link>https://h-wanng.github.io/tags/installation/</link>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/installation/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://h-wanng.github.io/tags/python/</link>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>ROS</title>
+        <link>https://h-wanng.github.io/tags/ros/</link>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/ros/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>UUV Simulator</title>
+        <link>https://h-wanng.github.io/tags/uuv-simulator/</link>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/uuv-simulator/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>css</title>
+        <link>https://h-wanng.github.io/tags/css/</link>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/css/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>html</title>
+        <link>https://h-wanng.github.io/tags/html/</link>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/html/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>markdown</title>
+        <link>https://h-wanng.github.io/tags/markdown/</link>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/markdown/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>themes</title>
+        <link>https://h-wanng.github.io/tags/themes/</link>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://h-wanng.github.io/tags/themes/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
