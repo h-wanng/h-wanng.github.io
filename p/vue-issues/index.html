@@ -320,7 +320,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -427,7 +427,291 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">建议：无论在什么情况下都没有必要将一个变量显示的赋值为undefined。如果需要定义某个变量来保存将来要使用的对象，应该将其初始化为null.
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="vue中标签中拼接变量">Vue中标签中拼接变量</h2>
+<p>通过<code>v-bind</code>，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">v-bind:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
 </div>
+</div><h2 id="页面返回后刷新数据">页面返回后刷新数据</h2>
+<p>使用钩子函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">activated</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//获取数据方法
+</span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span>
+<span class="p">},</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="父子组件的值传递">父子组件的值传递</h2>
+<p>TODO</p>
+<p>props</p>
+<h2 id="vue组件中的css-scoped">Vue组件中的CSS scoped</h2>
+<p>vue组件中，style标签中属性<code>scoped</code>。该属性会让该组件下的css样式只适用于本组件，而不会影响全局组件。</p>
+<h2 id="vue-element-ui-表格显示序号">Vue element ui 表格显示序号</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">fixed</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;序号&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{scope.$index + 1}} <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="保存前端文件列表的问题">保存前端文件列表的问题</h2>
+<p>前端的上传的文件地址列表保存到数据库，后端报sql异常
+<code>Incorrect string value: '\xAC\xED\x00\x05sr...' for column 'appendix' at row 1</code></p>
+<p>原因竟是没有<code>toString()</code> :D 列表 -&gt; varchar？</p>
+<h2 id="vue动态加载组件问题">Vue动态加载组件问题</h2>
+<p>已知webpack支持动态加载，es6新增import()函数支持动态加载，import()返回一个 Promise 对象</p>
+<p><a class="link" href="https://blog.csdn.net/qq_38211205/article/details/124348464"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/qq_38211205/article/details/124348464</a></p>
+<p>动态加载组件可以写成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">component</span> <span class="o">:</span><span class="nx">is</span><span class="o">=</span><span class="s2">&#34;component&#34;</span>
+        <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="s2">&#34;component&#34;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="err">/template&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
+  <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">],</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">component</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">loader</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="sb">`@components/demo/demoTemplates/</span><span class="si">${</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">()</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@components/demo/demoTemplates/defaultDemo&#39;</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但在实际使用中发现，import并不是完全动态的，或者说webpack并不能完全的动态加载，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="sb">`@/components/forms/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="c1">// 或是
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="s1">&#39;@/components/forms/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这种情况并不能实现动态加载，”webpack 编译es6 动态引入 import() 时不能传入变量“，也就是webpack并不能实现完全动态。可以通过字符串模板来提供部分信息给webpack，例如import(`@/views/${path}`), 这样编译时会编译所有@/views下的模块，但运行时确定path的值才会加载，从而实现懒加载。</p>
+<p>个人猜想是webpack有一部分路径作为根据才能匹配模块进行编译，否则它并不知道要加载编译哪些模块。</p>
+<p>但在如此import之后在我的项目中依旧报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vue.runtime.esm.js?2b0e:619 [Vue warn]: Failed to resolve async component: function () {
+          return Promise.resolve(&#34;@/&#34;.concat(_this.curPath)).then(function (s) {
+            return (0, _interopRequireWildcard2.default)(__webpack_require__(&#34;./src/components/CommonForm sync recursive&#34;)(s));
+          });
+        }
+Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>sync recursive 递归？不太理解</p>
+<p>网上查到的类似的解决办法有（发现的顺序是3-1-2）：</p>
+<ol>
+<li>缺少webpack-cli，webpack4.x中部分功能交给webpack-cli了，
+<ul>
+<li>npm安装webpack-cli报错依旧，未解决。</li>
+</ul>
+</li>
+<li>import属于异步引用组件，需要babel-loader处理
+<ul>
+<li>查看项目中有这个模块，且在babel配置文件中发现已配置该插件，还有注释内容</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">// babel-plugin-dynamic-import-node plugin only does one thing by converting all import() to require().
+// This plugin can significantly increase the speed of hot updates, when you have a large number of pages.
+</code></pre></td></tr></table>
+</div>
+</div>这和下一点使用的方式竟还有些交集。</li>
+<li><a class="link" href="https://blog.csdn.net/c19910323/article/details/106754307/"  target="_blank" rel="noopener"
+    >如何解决 Critical dependency: the request of a dependency is an expression ？</a> webpack4中动态import不支持变量方式。使用require加载，Promise.resolve(require(`@/views/${view}`).default)</li>
+</ol>
+<p>最终是使用require加载解决的。总结这些是觉得问题很奇怪在尝试解决import，因为感觉import和require二者并无太大区别。最终妥协并接纳了第三点中webpack4中动态import不支持变量方式的说法。</p>
+<p>使用require的方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用require中也验证了<code>不能完全动态加载</code>说法，因此让路径中一部分作为模板<code>@/views/</code>来匹配。</p>
+<p>在解决问题的过程中好像看到import()和require()其中一个区别是前者是异步，后者是同步加载。</p>
+<p>XD 让我心痒痒的，在把require抽成方法后使用async await可以让他变成异步吗？</p>
+<h2 id="捕获require-module_not_found-异常">捕获require MODULE_NOT_FOUND 异常</h2>
+<p><a class="link" href="https://stackoverflow.com/questions/13197795/handle-errors-thrown-by-require-module-in-node-js"  target="_blank" rel="noopener"
+    >Handle errors thrown by require() module in node.js</a></p>
+<p>上节使用<code>require</code>加载模块，如果传入的路径错误require抛出异常(console中)，组件固然也无法正常加载，弹出的页面/对话框就是空白的，用户体验肯定是很不好的。
+作为后端最先能想到的就是try-catch-finally，理想的逻辑是出错跳转/展示默认页面告知用户出错情况及可能原因。</p>
+<p>因此优雅的解决方法之一，将require抽成方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如此，在模块加载不到的情况下返回默认组件，其他错误情况下，抛出异常。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">async</span> <span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>听说async await能让方法变异步？改造一下吧，这样方法会等待<code>require('@/views/'+modulePath).default</code>执行成功并<code>Promise.resolve(）</code>这样一下，返回promise。那我调用就可以这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">requireMod</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>不用自己这样封装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>作为前端门外汉，目前还尚未有时间深入了解<code>Promise</code>。这个问题就到此吧。</p>
+
 </section>
 
 
@@ -608,6 +892,14 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
     <li><a href="#ruoyi-字典取值并回显到页面">Ruoyi 字典取值并回显到页面</a></li>
     <li><a href="#ruoyi-vue下拉框取字典表值回显为数字不是文字">Ruoyi vue下拉框取字典表值回显为数字不是文字</a></li>
     <li><a href="#js中null和undefined">JS中null和undefined</a></li>
+    <li><a href="#vue中标签中拼接变量">Vue中标签中拼接变量</a></li>
+    <li><a href="#页面返回后刷新数据">页面返回后刷新数据</a></li>
+    <li><a href="#父子组件的值传递">父子组件的值传递</a></li>
+    <li><a href="#vue组件中的css-scoped">Vue组件中的CSS scoped</a></li>
+    <li><a href="#vue-element-ui-表格显示序号">Vue element ui 表格显示序号</a></li>
+    <li><a href="#保存前端文件列表的问题">保存前端文件列表的问题</a></li>
+    <li><a href="#vue动态加载组件问题">Vue动态加载组件问题</a></li>
+    <li><a href="#捕获require-module_not_found-异常">捕获require MODULE_NOT_FOUND 异常</a></li>
   </ol>
 </nav>
         </div>
