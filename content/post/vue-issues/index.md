@@ -1,7 +1,7 @@
 +++
 author = "H. Wang"
 title = "Vue & JS Issues"
-date = "2022-09-05"
+date = "2022-11-14"
 description = "Vue(和JS)的一些问题记录"
 tags = [
     "Vue"
@@ -379,7 +379,7 @@ https://www.jianshu.com/p/2a11d95ffd2e
 
 这种情况是el-dialog标签在父组件中，但其中包裹的内容封装在子组件中。那此时使用el-dialog的destroy-on-close虽然能够重置子组件中数据但子组件的生命周期会变的很奇怪。
 
-![el-dialog-life-cycle](assets/el-dialog-life-cycle.png){:width="90px"}
+![el-dialog-life-cycle](assets/el-dialog-life-cycle.png)
 
 在此情况下，若在子组件的created钩子函数中进行数据请求和加载显然无法满足需求，如数据不能及时回显，因为子组件在dialog关闭后执行钩子函数。
 
@@ -402,6 +402,8 @@ https://www.jianshu.com/p/2a11d95ffd2e
 ## Vue父子组件动态传值及数据同步dialog为例
 
 TODO.
+
+下次一定. 11-14
 
 ## elementui el-form-item标签和输入控件在页面缩放时不在同一行
 
