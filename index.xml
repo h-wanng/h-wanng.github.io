@@ -95,11 +95,11 @@
 </description>
         </item>
         <item>
-        <title>Vue Issues</title>
-        <link>https://h-wanng.github.io/p/vue-issues/</link>
+        <title>Vue &amp; JS Issues</title>
+        <link>https://h-wanng.github.io/p/vue-js-issues/</link>
         <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://h-wanng.github.io/p/vue-issues/</guid>
+        <guid>https://h-wanng.github.io/p/vue-js-issues/</guid>
         <description>&lt;h2 id=&#34;ruoyi-字典取值并回显到页面&#34;&gt;Ruoyi 字典取值并回显到页面&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -134,9 +134,11 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;解决方法：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;将数据表（实体）中的字段改为varchar。&lt;/li&gt;
-&lt;li&gt;将value的值用Number包起来：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;将数据表（实体）中的字段改为varchar。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将value的值用Number包起来：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -150,12 +152,12 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-select&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;v-model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;form.job_grade&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;clearable&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;请选择职级&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-option&lt;/span&gt;
-        &lt;span class=&#34;na&#34;&gt;v-for&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict in dict.type.job_grade_type&amp;#34;&lt;/span&gt;
-        &lt;span class=&#34;na&#34;&gt;:key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict.value&amp;#34;&lt;/span&gt;
-        &lt;span class=&#34;na&#34;&gt;:label&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict.label&amp;#34;&lt;/span&gt;
-        &lt;span class=&#34;na&#34;&gt;:value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Number(dict.value)&amp;#34;&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-option&lt;/span&gt;
+     &lt;span class=&#34;na&#34;&gt;v-for&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict in dict.type.job_grade_type&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;na&#34;&gt;:key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict.value&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;na&#34;&gt;:label&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dict.label&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;na&#34;&gt;:value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Number(dict.value)&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-select&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -172,12 +174,14 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+ &lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+ &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;后端接收到的数据为&lt;code&gt;&amp;quot;id&amp;quot;: nil&lt;/code&gt;。将id设置为&#39;&#39;,也是一样的情况，最终导致，插入（insert）数据报错，错误信息大致为 字段被定义两次。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;解决办法就是不初始化参数，或将其初始化为undefined。&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/m0_47135993/article/details/119800231&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;undefined和null的区别&lt;/a&gt;:
@@ -355,15 +359,17 @@ Reason: Error: Cannot find module &amp;#39;@/components/forms/credit&amp;#39;
 &lt;/div&gt;&lt;p&gt;sync recursive 递归？不太理解&lt;/p&gt;
 &lt;p&gt;网上查到的类似的解决办法有（发现的顺序是3-1-2）：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;缺少webpack-cli，webpack4.x中部分功能交给webpack-cli了，
+&lt;li&gt;
+&lt;p&gt;缺少webpack-cli，webpack4.x中部分功能交给webpack-cli了，&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;npm安装webpack-cli报错依旧，未解决。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;import属于异步引用组件，需要babel-loader处理
+&lt;li&gt;
+&lt;p&gt;import属于异步引用组件，需要babel-loader处理&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;查看项目中有这个模块，且在babel配置文件中发现已配置该插件，还有注释内容&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;查看项目中有这个模块，且在babel配置文件中发现已配置该插件，还有注释内容&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -374,9 +380,14 @@ Reason: Error: Cannot find module &amp;#39;@/components/forms/credit&amp;#39;
 // This plugin can significantly increase the speed of hot updates, when you have a large number of pages.
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;这和下一点使用的方式竟还有些交集。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/c19910323/article/details/106754307/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;如何解决 Critical dependency: the request of a dependency is an expression ？&lt;/a&gt; webpack4中动态import不支持变量方式。使用require加载，Promise.resolve(require(`@/views/${view}`).default)&lt;/li&gt;
+&lt;/div&gt;&lt;p&gt;这和下一点使用的方式竟还有些交集。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/c19910323/article/details/106754307/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何解决 Critical dependency: the request of a dependency is an expression ？&lt;/a&gt; webpack4中动态import不支持变量方式。使用require加载，Promise.resolve(require(`@/views/${view}`).default)&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;最终是使用require加载解决的。总结这些是觉得问题很奇怪在尝试解决import，因为感觉import和require二者并无太大区别。最终妥协并接纳了第三点中webpack4中动态import不支持变量方式的说法。&lt;/p&gt;
 &lt;p&gt;使用require的方式：&lt;/p&gt;
@@ -477,6 +488,156 @@ Reason: Error: Cannot find module &amp;#39;@/components/forms/credit&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;作为前端门外汉，目前还尚未有时间深入了解&lt;code&gt;Promise&lt;/code&gt;。这个问题就到此吧。&lt;/p&gt;
+&lt;h2 id=&#34;vue-v-for循环中动态绑定失效&#34;&gt;Vue v-for循环中动态绑定失效&lt;/h2&gt;
+&lt;p&gt;场景：使用v-for动态增加/删除展示的区块（el-container）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;v-for&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(item, index) in form.posts&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;:key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;同时需要根据变量的有无动态显示/隐藏&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;，通过&lt;code&gt;@click.native=&amp;quot;postChange(item, index)&amp;quot;&lt;/code&gt;在选中选项后为item中增加一个name属性，用于在&lt;!-- raw HTML omitted --&gt;中展示。&lt;/p&gt;
+&lt;p&gt;实际上，经此操作改变了item中的值，但在页面中没有及时刷新导致&lt;!-- raw HTML omitted --&gt;中不显示或显示为undefined&lt;/p&gt;
+&lt;p&gt;最终通过Vue方法&lt;code&gt;this.$forceUpdate() &lt;/code&gt;来强制Vue实例重新渲染，解决问题。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.webzsky.com/?p=1415&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.webzsky.com/?p=1415&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;另外：&lt;/p&gt;
+&lt;p&gt;「注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。」
+update: this.$set()也是用于此类 &lt;code&gt;数据已经添加/修改，但是页面没有响应式的渲染属性&lt;/code&gt; 的问题&lt;/p&gt;
+&lt;p&gt;this.$set(target, key, value)
+target：表示数据源，即是你要操作的数组或者对象
+key：要操作的的字段
+value：更改的数据&lt;/p&gt;
+&lt;h2 id=&#34;js中的值复制与引用复制&#34;&gt;JS中的值复制与引用复制&lt;/h2&gt;
+&lt;p&gt;this.allUserList = this.selections；
+&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/364336784&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zhuanlan.zhihu.com/p/364336784&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;js正则表达式-i-g-m&#34;&gt;JS正则表达式 i g m&lt;/h2&gt;
+&lt;p&gt;i 不区分大小写&lt;/p&gt;
+&lt;p&gt;g 匹配多次，返回数组&lt;/p&gt;
+&lt;p&gt;m 匹配多行&lt;/p&gt;
+&lt;h2 id=&#34;vue监听的奇妙问题&#34;&gt;Vue监听的奇妙问题&lt;/h2&gt;
+&lt;p&gt;监听某个值，但是另有一个操作将其置为null，此时能够监听到此值由初始变为null，但后续监听失效。解决：重置操作换成 xxx = &amp;lsquo;&#39;;&lt;/p&gt;
+&lt;h2 id=&#34;vue表单回显不可编辑的奇妙问题&#34;&gt;Vue表单回显不可编辑的奇妙问题&lt;/h2&gt;
+&lt;p&gt;问题场景：从列表展示页面点击编辑按钮，获取该项详细数据，跳转至编辑页面并将数据回显至表单&lt;/p&gt;
+&lt;p&gt;问题描述：其中一项数据不能编辑&lt;/p&gt;
+&lt;p&gt;不可编辑大概率和数据绑定有关系，所以第一步就检查了表单数据该项的定义，虽然该数据在不同情况下是不同的数据类型，但在data中定义了null/undefined应该没有问题。&lt;/p&gt;
+&lt;p&gt;网上找到 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_57528681/article/details/125634981&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.csdn.net/qq_57528681/article/details/125634981&lt;/a&gt; 中说到回显的表单数据不可编辑可能是因为回传的数据不可编辑，那就转一下吧：
+data -&amp;gt; string -&amp;gt; obj&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;结果一样，不能编辑&lt;/p&gt;
+&lt;p&gt;又找到 &lt;a class=&#34;link&#34; href=&#34;https://www.jb51.net/article/245758.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.jb51.net/article/245758.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vue的响应式属性是通过属性的getter/setter实现，而在Vue实例创建时，属性未声明则导致不能触发视图更新。&lt;/p&gt;
+&lt;p&gt;其实在第一步检查中就已考虑的该问题，因此怀疑是否设置的初始类型也有影响，在不确定undefined会不会导致问题的情况下又将定义类型改为null，结果相同，因此问题不在此。&lt;/p&gt;
+&lt;p&gt;最终破案：在获取数据后为了方便使用了如下的赋值方式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;又因为其中一项需要根据类型动态赋不同值，没有在&lt;code&gt;this.form = {}&lt;/code&gt;中赋值，因此此时form中是没有该项数据的，导致了不可编辑的问题，最后在其中加上&lt;code&gt;yyy: null&lt;/code&gt;解决问题，如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;yyy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;PS. 这种赋值语句在需要改变对象的部分属性值时会导致其他属性丢失。如还是表单回显编辑场景下回传了数据项id至表单数据中，即form.id = 1; 而此时又有“在下拉框值变动时重置已填数据”的需求，如果在清空数据是采用此种方式赋值而没包含id会导致id数据丢失，继而导致更新数据失败。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;el-dialog-destroy-on-close-子组件的生命周期问题&#34;&gt;el-dialog destroy-on-close 子组件的生命周期问题&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/p/2a11d95ffd2e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.jianshu.com/p/2a11d95ffd2e&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“经过测试发现，把el-dialog标签写在父组件不写在子组件再使用destroy-on-close属性，实际它只能初始化dialog组件内部包裹的子组件data数据！！而且子组件的生命周期函数钩子会在关闭弹窗后还会执行一次！！，这样就感觉destroy-on-close很鸡肋”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这种情况是el-dialog标签在父组件中，但其中包裹的内容封装在子组件中。那此时使用el-dialog的destroy-on-close虽然能够重置子组件中数据但子组件的生命周期会变的很奇怪。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle.png&#34;
+	width=&#34;907&#34;
+	height=&#34;246&#34;
+	srcset=&#34;https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_480x0_resize_box_3.png 480w, https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;el-dialog-life-cycle&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;368&#34;
+		data-flex-basis=&#34;884px&#34;
+	
+&gt;{:width=&amp;ldquo;90px&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;在此情况下，若在子组件的created钩子函数中进行数据请求和加载显然无法满足需求，如数据不能及时回显，因为子组件在dialog关闭后执行钩子函数。&lt;/p&gt;
+&lt;p&gt;对此用法，可不使用destroy-on-close属性，而是通过v-if控制子组件和dialog同步加载：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-dialog&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;:title&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;:visible&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;sync&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;openUserDialog&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;1050px&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;append-to-body&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;center&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;user-dialog&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;v-if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;openUserDialog&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;userDialog&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;echo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;echoSelection&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;selectAll&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;selectAll&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;slot&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;footer&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dialog-footer&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-button&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;primary&amp;#34;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;click&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;handleUserSave&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;保 存&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-button&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-button&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;click&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;openUserDialog = false&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;取 消&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-button&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-dialog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;vue父子组件动态传值及数据同步dialog为例&#34;&gt;Vue父子组件动态传值及数据同步dialog为例&lt;/h2&gt;
+&lt;p&gt;TODO.&lt;/p&gt;
+&lt;h2 id=&#34;elementui-el-form-item标签和输入控件在页面缩放时不在同一行&#34;&gt;elementui el-form-item标签和输入控件在页面缩放时不在同一行&lt;/h2&gt;
+&lt;p&gt;运用el-form自带属性 &lt;code&gt;:inline&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;“设置 inline 属性可以让表单域变为行内的表单域”&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;el-form&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;:inline&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;:model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;formInline&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;demo-form-inline&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;但是如果设置了栅格布局 &lt;code&gt;el-row&lt;/code&gt; + &lt;code&gt;el-col&lt;/code&gt; 时，el-col的span属性会设定长度比例，此时缩放页面依旧会样式变化，因此需将表单中布局删除&lt;/p&gt;
 </description>
         </item>
         <item>
