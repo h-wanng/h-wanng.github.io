@@ -405,6 +405,8 @@ TODO.
 
 下次一定. 11-14
 
+下次一定. 11-23
+
 ## elementui el-form-item标签和输入控件在页面缩放时不在同一行
 
 运用el-form自带属性 `:inline`
@@ -416,3 +418,41 @@ TODO.
 ```
 
 但是如果设置了栅格布局 `el-row` + `el-col` 时，el-col的span属性会设定长度比例，此时缩放页面依旧会样式变化，因此需将表单中布局删除
+
+## ref 在 v-for undefined
+
+https://blog.csdn.net/weixin_34217773/article/details/91398408
+
+需求：在展示一张**已填写过的**试卷（问卷/投票）时，使用原控件，如radio（单选框）checkbox（多选框）将试卷实例数据回显，即展示回答情况。在此场景下，这些控件应为禁用状态，较为方便的操作是在el-form中使用disabled属性，可将form表单内的所有输入组件全部禁用。
+
+这样简单的回显+禁用已经实现，但disabled ≠ readonly，简单的将表单禁用导致所有组件都为灰色会让用户感觉“有问题”/“不和谐”。因此决定将控制组件disabled样式的类`is-disabled`在页面渲染完成之后删除，这样达到只读的效果。
+
+Kao. 背景写这么长。
+
+在此过程发现一个问题，因为题目是使用v-for循环产生的，尝试在mounted钩子函数中使用`window.document.getElementByClass`或是使用更高级的ES6中的querySelector或是Vue的refs都是获取不到，如：
+```html
+<div v-for="(question, index) in voteIns.questions" :key="question.question_id">
+  <el-radio-group size="small" v-if="question.question_type == 0" v-model="radioList[index]">
+    <el-radio
+      v-for="(option, idx) in question.options"
+      :key="idx"
+      ref="check"
+      :label="option.option_id"
+  >{{option.option_content}}</el-radio>
+</div>
+```
+在mounted中打印refs的DOM元素，结果为undefined
+```
+$refs {paperDetailForm: VueComponent}
+$refs.check undefined
+```
+原因是在mounted周期中，只是把组件模板的静态数据渲染了，动态绑定的Dom并没有初始化，所以在mounted周期里面获取不到DOM元素。
+解决方法也如该博主所说：在数据加载并绑定之后操作DOM
+```js
+this.$nextTick(() => {
+    this.$refs.check.forEach(check => {
+        const className = check.$el.firstChild.className;
+        check.$el.firstChild.className = className.replace(/is-disabled/, '');
+    });
+})
+```

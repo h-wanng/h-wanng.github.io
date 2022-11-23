@@ -320,7 +320,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 10 分钟
+                    阅读时长: 11 分钟
                 </time>
             </div>
         
@@ -861,6 +861,7 @@ data -&gt; string -&gt; obj</p>
 </div><h2 id="vue父子组件动态传值及数据同步dialog为例">Vue父子组件动态传值及数据同步dialog为例</h2>
 <p>TODO.</p>
 <p>下次一定. 11-14</p>
+<p>下次一定. 11-23</p>
 <h2 id="elementui-el-form-item标签和输入控件在页面缩放时不在同一行">elementui el-form-item标签和输入控件在页面缩放时不在同一行</h2>
 <p>运用el-form自带属性 <code>:inline</code></p>
 <p>“设置 inline 属性可以让表单域变为行内的表单域”</p>
@@ -873,7 +874,69 @@ data -&gt; string -&gt; obj</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>但是如果设置了栅格布局 <code>el-row</code> + <code>el-col</code> 时，el-col的span属性会设定长度比例，此时缩放页面依旧会样式变化，因此需将表单中布局删除</p>
-
+<h2 id="ref-在-v-for-undefined">ref 在 v-for undefined</h2>
+<p><a class="link" href="https://blog.csdn.net/weixin_34217773/article/details/91398408"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/weixin_34217773/article/details/91398408</a></p>
+<p>需求：在展示一张<strong>已填写过的</strong>试卷（问卷/投票）时，使用原控件，如radio（单选框）checkbox（多选框）将试卷实例数据回显，即展示回答情况。在此场景下，这些控件应为禁用状态，较为方便的操作是在el-form中使用disabled属性，可将form表单内的所有输入组件全部禁用。</p>
+<p>这样简单的回显+禁用已经实现，但disabled ≠ readonly，简单的将表单禁用导致所有组件都为灰色会让用户感觉“有问题”/“不和谐”。因此决定将控制组件disabled样式的类<code>is-disabled</code>在页面渲染完成之后删除，这样达到只读的效果。</p>
+<p>Kao. 背景写这么长。</p>
+<p>在此过程发现一个问题，因为题目是使用v-for循环产生的，尝试在mounted钩子函数中使用<code>window.document.getElementByClass</code>或是使用更高级的ES6中的querySelector或是Vue的refs都是获取不到，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(question, index) in voteIns.questions&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;question.question_id&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">el-radio-group</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;small&#34;</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;question.question_type == 0&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;radioList[index]&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">el-radio</span>
+      <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(option, idx) in question.options&#34;</span>
+      <span class="na">:key</span><span class="o">=</span><span class="s">&#34;idx&#34;</span>
+      <span class="na">ref</span><span class="o">=</span><span class="s">&#34;check&#34;</span>
+      <span class="na">:label</span><span class="o">=</span><span class="s">&#34;option.option_id&#34;</span>
+  <span class="p">&gt;</span>{{option.option_content}}<span class="p">&lt;/</span><span class="nt">el-radio</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在mounted中打印refs的DOM元素，结果为undefined</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$refs {paperDetailForm: VueComponent}
+$refs.check undefined
+</code></pre></td></tr></table>
+</div>
+</div><p>原因是在mounted周期中，只是把组件模板的静态数据渲染了，动态绑定的Dom并没有初始化，所以在mounted周期里面获取不到DOM元素。
+解决方法也如该博主所说：在数据加载并绑定之后操作DOM</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">$nextTick</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">check</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">check</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">className</span> <span class="o">=</span> <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span><span class="p">;</span>
+        <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">className</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/is-disabled/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -1070,6 +1133,7 @@ data -&gt; string -&gt; obj</p>
     <li><a href="#el-dialog-destroy-on-close-子组件的生命周期问题">el-dialog destroy-on-close 子组件的生命周期问题</a></li>
     <li><a href="#vue父子组件动态传值及数据同步dialog为例">Vue父子组件动态传值及数据同步dialog为例</a></li>
     <li><a href="#elementui-el-form-item标签和输入控件在页面缩放时不在同一行">elementui el-form-item标签和输入控件在页面缩放时不在同一行</a></li>
+    <li><a href="#ref-在-v-for-undefined">ref 在 v-for undefined</a></li>
   </ol>
 </nav>
         </div>
