@@ -407,6 +407,162 @@ TODO.
 
 下次一定. 11-23
 
+2023-02-02
+
+如在自定义对话框组件的使用中：
+### 父组件向子组件：
+父组件向子组件传值：通过数据绑定将数据传递给子组件
+```html
+<user-single-dialog
+  :title="title"
+  width="1100px"
+  :visible.sync="userSglOpen"
+  @handleSelect="handleUserSelect"/>
+```
+
+```js
+import UserSingleDialog from "@/views/components/UserSingleDialog";
+
+components: { UserSingleDialog }
+
+data() {
+  return {
+    title: '',
+    userSglOpen: false
+  }
+}
+
+methods: {
+  /**
+    * 对话框子组件emit触发并传递数据
+    * @param selection 对话框选中的数据
+    */
+  handleUserSelect(selection) {
+    // 数据操作
+    // ...
+  }
+}
+```
+子组件中：通过props接收父组件的传值
+```js
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+      default: '用户选择'
+    },
+    visible: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    width: {
+      type: String,
+      required: true,
+      default: '1100px'
+    }
+  },
+}
+</script>
+```
+### 子组件向父组件：
+子组件通过使用`$emit`触发父组件的自定义事件
+
+如对话框子组件中，选中人员并点击保存按钮时使用`$emit`触发父组件中的`handleSelect`事件，并将选中的数据`this.selection`传递给父组件
+```js
+<script>
+export default {
+  methods: {
+    handleUserSave() {
+      this.$emit('handleSelect', this.selection);
+      this.open = false;
+    },
+  }
+}
+</script>
+```
+父组件中在自定义事件触发时调用相应方法获取并操作数据
+```html
+<template>
+  <div>
+    <user-single-dialog
+      ref="userSglDialog"
+      :title="title"
+      width="1100px"
+      :visible.sync="userSglOpen"
+      @echo="echoSelection"
+      @handleSelect="handleUserSelect"/>
+  </div>
+</template>
+```
+```js
+<script>
+import UserSingleDialog from "@/views/components/UserSingleDialog";
+
+export default {
+  name: "sample",
+  components: { UserSingleDialog },
+  methods: {
+    /**
+     * 对话框子组件emit触发并传递数据
+     * @param selection 对话框选中的数据
+     */
+    handleUserSelect(selection) {
+      this.selection = selection;
+      this.form.user_names = selection.user_name;
+      this.echoId = selection.user_id;
+    }
+  }
+}
+</script>
+```
+### 父子组件数据同步：
+`.sync` 修饰符
+
+https://v2.cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6
+
+如Vue文档中所述：『在有些情况下，我们可能需要对一个 prop 进行“双向绑定”。不幸的是，真正的双向绑定会带来维护上的问题』
+从2.3.0起Vue重新引入了`.sync`修饰符，但是只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 `v-on`监听器。如：
+```html
+<comp :foo.sync="bar"></comp>
+```
+会被扩展为：
+```html
+<comp :foo="bar" @update:foo="val => bar = val"></comp>
+```
+当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：
+```js
+this.$emit('update:foo', newValue)
+```
+因此`.sync` 修饰符的作用是当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定。
+
+说是v-model也能实现？
+
+如在自定义对话框组件的使用中：通过监听父组件传递的visible控制对话框子组件的open，同时子组件对话框关闭时同步更新父组件中的visible值。
+```js
+<script>
+
+export default {
+  watch: {
+    visible(val) {
+      if (val != null) {
+        this.open = val;
+      }
+    },
+    open: {
+      handler(val) {
+        this.$emit('update:visible', val)
+      },
+      deep: true,
+      immediate: true
+    }
+  },
+}
+</script>
+```
+
 ## elementui el-form-item标签和输入控件在页面缩放时不在同一行
 
 运用el-form自带属性 `:inline`
