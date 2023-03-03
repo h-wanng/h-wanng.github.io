@@ -132,14 +132,14 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
         
 
         <li >
-            <a href='/about/' >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
                 
                 
                 
@@ -152,7 +152,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -346,13 +346,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">DTree</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="o">(</span><span class="n">Long</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">label</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;label&#34;</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">parentId</span> <span class="o">=</span> <span class="o">(</span><span class="n">Long</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;parent_id&#34;</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">children</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="nf">DTree</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="o">(</span><span class="n">Long</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">label</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;label&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">parentId</span> <span class="o">=</span> <span class="o">(</span><span class="n">Long</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;parent_id&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">children</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>实际上，MySQL中有符号类型 <code>Bigint(20)</code>的取值范围为-9223372036854775808~9223372036854775807，与Java.lang.Long的取值范围完全一致，mybatis/mybatis-plus会将 Bigint(20)映射为Long类型。
 ——<a class="link" href="https://blog.csdn.net/LZ15932161597/article/details/110248316"  target="_blank" rel="noopener"
@@ -387,17 +387,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LongCache</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nf">LongCache</span><span class="o">(){}</span>
-
-    <span class="kd">static</span> <span class="kd">final</span> <span class="n">Long</span> <span class="n">cache</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Long</span><span class="o">[-(-</span><span class="n">128</span><span class="o">)</span> <span class="o">+</span> <span class="n">127</span> <span class="o">+</span> <span class="n">1</span><span class="o">];</span>
-
-    <span class="kd">static</span> <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cache</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-            <span class="n">cache</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">128</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LongCache</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="nf">LongCache</span><span class="o">(){}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="kd">final</span> <span class="n">Long</span> <span class="n">cache</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Long</span><span class="o">[-(-</span><span class="mi">128</span><span class="o">)</span> <span class="o">+</span> <span class="mi">127</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cache</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cache</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">128</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>LongCache会预先缓存 [-128,127] 范围内的数，通过缓存频繁请求的值代来更好的空间和时间性能，当数据超出此范围，则new一个Long对象；</p>
 <p>“==”是比较的地址，超出此范围的数据地址不一致，所以范围内的比较是true，范围外的数据是false。</p>

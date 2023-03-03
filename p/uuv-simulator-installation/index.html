@@ -132,14 +132,14 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
         
 
         <li >
-            <a href='/about/' >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
                 
                 
                 
@@ -152,7 +152,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -363,8 +363,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install python3-catkin-tools
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install python3-catkin-tools
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="1-安装">1 安装</h2>
 <p>源码安装基于 <code>ROS Melodic</code> 和 <code>Gazebo9</code> 的 <code>uuv-simulator</code>.</p>
@@ -375,9 +375,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">mkdir -p ~/catkin_ws/src
-<span class="nb">cd</span> ~/catkin_ws/src
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p ~/catkin_ws/src
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/catkin_ws/src
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="12-初始化catkin工作空间">1.2 初始化catkin工作空间</h3>
 <div class="highlight"><div class="chroma">
@@ -386,9 +386,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/catkin_ws
-catkin init
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ~/catkin_ws
+</span></span><span class="line"><span class="cl">catkin init
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="13-clone源码">1.3 clone源码</h3>
 <div class="highlight"><div class="chroma">
@@ -399,11 +399,11 @@ catkin init
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/catkin_ws/src
-git clone https://github.com/uuvsimulator/uuv_simulator.git
-<span class="c1"># 若从git clone 失败，使用国内 gitee 地址</span>
-<span class="c1"># git clone https://gitee.com/h_wanng/uuv_simulator.git</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ~/catkin_ws/src
+</span></span><span class="line"><span class="cl">git clone https://github.com/uuvsimulator/uuv_simulator.git
+</span></span><span class="line"><span class="cl"><span class="c1"># 若从git clone 失败，使用国内 gitee 地址</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git clone https://gitee.com/h_wanng/uuv_simulator.git</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="14-软件包依赖安装">1.4 软件包依赖安装</h3>
 <blockquote>
@@ -415,9 +415,9 @@ git clone https://github.com/uuvsimulator/uuv_simulator.git
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/catkin_ws
-rosdep install --from-paths src --ignore-src --rosdistro<span class="o">=</span>melodic -y --skip-keys <span class="s2">&#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ~/catkin_ws
+</span></span><span class="line"><span class="cl">rosdep install --from-paths src --ignore-src --rosdistro<span class="o">=</span>melodic -y --skip-keys <span class="s2">&#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="15-编译">1.5 编译</h3>
 <div class="highlight"><div class="chroma">
@@ -426,9 +426,9 @@ rosdep install --from-paths src --ignore-src --rosdistro<span class="o">=</span>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/catkin_ws
-catkin_make install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ~/catkin_ws
+</span></span><span class="line"><span class="cl">catkin_make install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><strong>Note</strong>: 编译过程比较耗费内存，如果报错大多和内存相关。可以尝试：</p>
@@ -444,9 +444,9 @@ catkin_make install
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/catkin_ws/devel/setup.bash&#34;</span> &gt;&gt; ~/.bashrc
-<span class="nb">source</span> ~/.bashrc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/catkin_ws/devel/setup.bash&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="17-测试">1.7 测试</h3>
 <div class="highlight"><div class="chroma">
@@ -454,8 +454,8 @@ catkin_make install
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">roslaunch uuv_gazebo_worlds ocean_waves.launch
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">roslaunch uuv_gazebo_worlds ocean_waves.launch
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>launch文件启动Gazebo后显示如下场景即安装成功</p>
 <p><img src="/p/uuv-simulator-installation/gazebo-screenshot.png"

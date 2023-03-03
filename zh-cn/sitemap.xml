@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://h-wanng.github.io/</loc>
-    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://h-wanng.github.io/categories/</loc>
-    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,11 +28,20 @@
                 href="https://h-wanng.github.io/categories/"
                 />
   </url><url>
+    <loc>https://h-wanng.github.io/tags/mysql/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://h-wanng.github.io/categories/mysql/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://h-wanng.github.io/p/mysql-%E7%89%B9%E5%AE%9A%E5%80%BC%E5%9C%A8%E7%BB%93%E6%9E%9C%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://h-wanng.github.io/post/</loc>
-    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://h-wanng.github.io/tags/</loc>
-    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -114,15 +123,14 @@
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://h-wanng.github.io/page/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://h-wanng.github.io/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://h-wanng.github.io/links/</loc>
   </url><url>
     <loc>https://h-wanng.github.io/search/</loc>
   </url><url>
     <loc>https://h-wanng.github.io/categories/test/</loc>
+  </url><url>
+    <loc>https://h-wanng.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>
