@@ -132,14 +132,14 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
         
 
         <li >
-            <a href='/about/' >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
                 
                 
                 
@@ -152,7 +152,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -344,12 +344,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;职级&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">prop</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">:show-overflow-tooltip</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">slot-scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">dict-tag</span> <span class="na">:options</span><span class="o">=</span><span class="s">&#34;dict.type.job_grade_type&#34;</span> <span class="na">:value</span><span class="o">=</span><span class="s">&#34;scope.row.job_grade&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;职级&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">prop</span><span class="o">=</span><span class="s">&#34;job_grade&#34;</span> <span class="na">:show-overflow-tooltip</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">slot-scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dict-tag</span> <span class="na">:options</span><span class="o">=</span><span class="s">&#34;dict.type.job_grade_type&#34;</span> <span class="na">:value</span><span class="o">=</span><span class="s">&#34;scope.row.job_grade&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过 <code>slot-scope</code> <code>scope.row.job_grade</code> 获取当前column的prop，在字典中获取对应数据（label）</p>
 <h2 id="ruoyi-vue下拉框取字典表值回显为数字不是文字">Ruoyi vue下拉框取字典表值回显为数字不是文字</h2>
@@ -362,9 +362,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="o">`</span><span class="n">dict_label</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典标签&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w"></span><span class="o">`</span><span class="n">dict_value</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典键值&#39;</span><span class="p">,</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">`</span><span class="n">dict_label</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典标签&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">`</span><span class="n">dict_value</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;字典键值&#39;</span><span class="p">,</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>解决方法：</p>
 <ol>
@@ -385,15 +385,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-select</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;form.job_grade&#34;</span> <span class="na">clearable</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;请选择职级&#34;</span><span class="p">&gt;</span>
- <span class="p">&lt;</span><span class="nt">el-option</span>
-     <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;dict in dict.type.job_grade_type&#34;</span>
-     <span class="na">:key</span><span class="o">=</span><span class="s">&#34;dict.value&#34;</span>
-     <span class="na">:label</span><span class="o">=</span><span class="s">&#34;dict.label&#34;</span>
-     <span class="na">:value</span><span class="o">=</span><span class="s">&#34;Number(dict.value)&#34;</span>
-     <span class="p">&gt;&lt;/</span><span class="nt">el-option</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">el-select</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">el-select</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;form.job_grade&#34;</span> <span class="na">clearable</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;请选择职级&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">el-option</span>
+</span></span><span class="line"><span class="cl">     <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;dict in dict.type.job_grade_type&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="na">:key</span><span class="o">=</span><span class="s">&#34;dict.value&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="na">:label</span><span class="o">=</span><span class="s">&#34;dict.label&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="na">:value</span><span class="o">=</span><span class="s">&#34;Number(dict.value)&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&gt;&lt;/</span><span class="nt">el-option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">el-select</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="js中null和undefined">JS中null和undefined</h2>
 <p>遇见一个有意思的小问题。
@@ -407,13 +407,13 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
- <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
- <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>后端接收到的数据为<code>&quot;id&quot;: nil</code>。将id设置为'',也是一样的情况，最终导致，插入（insert）数据报错，错误信息大致为 字段被定义两次。</p>
+</div><p>后端接收到的数据为<code>&quot;id&quot;: nil</code>。将id设置为&rsquo;&rsquo;,也是一样的情况，最终导致，插入（insert）数据报错，错误信息大致为 字段被定义两次。</p>
 </li>
 </ol>
 <p>解决办法就是不初始化参数，或将其初始化为undefined。</p>
@@ -428,8 +428,8 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">建议：无论在什么情况下都没有必要将一个变量显示的赋值为undefined。如果需要定义某个变量来保存将来要使用的对象，应该将其初始化为null.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">建议：无论在什么情况下都没有必要将一个变量显示的赋值为undefined。如果需要定义某个变量来保存将来要使用的对象，应该将其初始化为null.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="vue中标签中拼接变量">Vue中标签中拼接变量</h2>
 <p>通过<code>v-bind</code>，如：</p>
@@ -439,9 +439,9 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">v-bind:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">v-bind:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;`/biz/tr/trainer_detail/index/${this.trainerId}`&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="页面返回后刷新数据">页面返回后刷新数据</h2>
 <p>使用钩子函数</p>
@@ -453,11 +453,11 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">activated</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//获取数据方法
-</span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span>
-<span class="p">},</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">activated</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取数据方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="父子组件的值传递">父子组件的值传递</h2>
 <p>TODO</p>
@@ -474,12 +474,12 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">fixed</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;序号&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{scope.$index + 1}} <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">el-table-column</span> <span class="na">fixed</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;序号&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;scope&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{scope.$index + 1}} <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">el-table-column</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="保存前端文件列表的问题">保存前端文件列表的问题</h2>
 <p>前端的上传的文件地址列表保存到数据库，后端报sql异常
@@ -522,35 +522,35 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">component</span> <span class="o">:</span><span class="nx">is</span><span class="o">=</span><span class="s2">&#34;component&#34;</span>
-        <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="s2">&#34;component&#34;</span> <span class="o">/&gt;</span>
-<span class="o">&lt;</span><span class="err">/template&gt;</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
-  <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">],</span>
-  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">component</span><span class="o">:</span> <span class="kc">null</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">loader</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="sb">`@components/demo/demoTemplates/</span><span class="si">${</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">()</span>
-    <span class="p">}).</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@components/demo/demoTemplates/defaultDemo&#39;</span><span class="p">)</span>
-    <span class="p">})</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">component</span> <span class="o">:</span><span class="nx">is</span><span class="o">=</span><span class="s2">&#34;component&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="s2">&#34;component&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">component</span><span class="o">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">loader</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="sb">`@components/demo/demoTemplates/</span><span class="si">${</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loader</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}).</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@components/demo/demoTemplates/defaultDemo&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但在实际使用中发现，import并不是完全动态的，或者说webpack并不能完全的动态加载，如：</p>
 <div class="highlight"><div class="chroma">
@@ -562,12 +562,12 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="sb">`@/components/forms/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
-<span class="c1">// 或是
-</span><span class="c1"></span><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="s1">&#39;@/components/forms/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="sb">`@/components/forms/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 或是
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="s1">&#39;@/components/forms/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这种情况并不能实现动态加载，”webpack 编译es6 动态引入 import() 时不能传入变量“，也就是webpack并不能实现完全动态。可以通过字符串模板来提供部分信息给webpack，例如import(`@/views/${path}`), 这样编译时会编译所有@/views下的模块，但运行时确定path的值才会加载，从而实现懒加载。</p>
 <p>个人猜想是webpack有一部分路径作为根据才能匹配模块进行编译，否则它并不知道要加载编译哪些模块。</p>
@@ -582,13 +582,13 @@ null表示没有对象，即不应该有值，经常用作函数的参数，或�
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vue.runtime.esm.js?2b0e:619 [Vue warn]: Failed to resolve async component: function () {
-          return Promise.resolve(&#34;@/&#34;.concat(_this.curPath)).then(function (s) {
-            return (0, _interopRequireWildcard2.default)(__webpack_require__(&#34;./src/components/CommonForm sync recursive&#34;)(s));
-          });
-        }
-Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nv">vue</span><span class="p">.</span><span class="nv">runtime</span><span class="p">.</span><span class="nv">esm</span><span class="p">.</span><span class="nv">js</span><span class="kd">?</span><span class="mi">2</span><span class="nv">b0e</span><span class="p">:</span><span class="mi">619</span> <span class="p">[</span><span class="na">Vue</span> <span class="na">warn</span><span class="p">]:</span> <span class="nc">Failed</span> <span class="nv">to</span> <span class="nv">resolve</span> <span class="nv">async</span> <span class="nv">component</span><span class="p">:</span> <span class="nv">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="nc">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="s2">&#34;@/&#34;</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nv">_this</span><span class="p">.</span><span class="nv">curPath</span><span class="p">)).</span><span class="nf">then</span><span class="p">(</span><span class="nv">function</span> <span class="p">(</span><span class="nv">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nv">_interopRequireWildcard2</span><span class="p">.</span><span class="nv">default</span><span class="p">)(</span><span class="nf">__webpack_require__</span><span class="p">(</span><span class="s2">&#34;./src/components/CommonForm sync recursive&#34;</span><span class="p">)(</span><span class="nv">s</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">          <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Reason</span><span class="p">:</span> <span class="nb">Error</span><span class="p">:</span> <span class="nc">Cannot</span> <span class="nv">find</span> <span class="kn">module</span> <span class="s1">&#39;@/components/forms/credit&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>sync recursive 递归？不太理解</p>
 <p>网上查到的类似的解决办法有（发现的顺序是3-1-2）：</p>
@@ -610,9 +610,9 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">// babel-plugin-dynamic-import-node plugin only does one thing by converting all import() to require().
-// This plugin can significantly increase the speed of hot updates, when you have a large number of pages.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// babel-plugin-dynamic-import-node plugin only does one thing by converting all import() to require().
+</span></span><span class="line"><span class="cl">// This plugin can significantly increase the speed of hot updates, when you have a large number of pages.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这和下一点使用的方式竟还有些交集。</p>
 </li>
@@ -630,8 +630,8 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用require中也验证了<code>不能完全动态加载</code>说法，因此让路径中一部分作为模板<code>@/views/</code>来匹配。</p>
 <p>在解决问题的过程中好像看到import()和require()其中一个区别是前者是异步，后者是同步加载。</p>
@@ -658,19 +658,19 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如此，在模块加载不到的情况下返回默认组件，其他错误情况下，抛出异常。</p>
 <div class="highlight"><div class="chroma">
@@ -689,19 +689,19 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">async</span> <span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">module</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">async</span> <span class="nx">requireMod</span><span class="p">(</span><span class="nx">modulePath</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">module</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">module</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/views/&#39;</span><span class="o">+</span><span class="nx">modulePath</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@/components/CommonForm/default&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="s1">&#39;MODULE_NOT_FOUND&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="nx">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">module</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>听说async await能让方法变异步？改造一下吧，这样方法会等待<code>require('@/views/'+modulePath).default</code>执行成功并<code>Promise.resolve(）</code>这样一下，返回promise。那我调用就可以这样：</p>
 <div class="highlight"><div class="chroma">
@@ -709,8 +709,8 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">requireMod</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">requireMod</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>不用自己这样封装：</p>
 <div class="highlight"><div class="chroma">
@@ -718,8 +718,8 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">formComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="sb">`@/views/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">curPath</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="k">default</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>作为前端门外汉，目前还尚未有时间深入了解<code>Promise</code>。这个问题就到此吧。</p>
 <h2 id="vue-v-for循环中动态绑定失效">Vue v-for循环中动态绑定失效</h2>
@@ -729,8 +729,8 @@ Reason: Error: Cannot find module &#39;@/components/forms/credit&#39;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(item, index) in form.posts&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;index&#34;</span> <span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(item, index) in form.posts&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;index&#34;</span> <span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>同时需要根据变量的有无动态显示/隐藏<!-- raw HTML omitted -->和<!-- raw HTML omitted -->，通过<code>@click.native=&quot;postChange(item, index)&quot;</code>在选中选项后为item中增加一个name属性，用于在<!-- raw HTML omitted -->中展示。</p>
 <p>实际上，经此操作改变了item中的值，但在页面中没有及时刷新导致<!-- raw HTML omitted -->中不显示或显示为undefined</p>
@@ -753,7 +753,7 @@ value：更改的数据</p>
 <p>g 匹配多次，返回数组</p>
 <p>m 匹配多行</p>
 <h2 id="vue监听的奇妙问题">Vue监听的奇妙问题</h2>
-<p>监听某个值，但是另有一个操作将其置为null，此时能够监听到此值由初始变为null，但后续监听失效。解决：重置操作换成 xxx = &lsquo;';</p>
+<p>监听某个值，但是另有一个操作将其置为null，此时能够监听到此值由初始变为null，但后续监听失效。解决：重置操作换成 xxx = &lsquo;&rsquo;;</p>
 <h2 id="vue表单回显不可编辑的奇妙问题">Vue表单回显不可编辑的奇妙问题</h2>
 <p>问题场景：从列表展示页面点击编辑按钮，获取该项详细数据，跳转至编辑页面并将数据回显至表单</p>
 <p>问题描述：其中一项数据不能编辑</p>
@@ -766,8 +766,8 @@ data -&gt; string -&gt; obj</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>结果一样，不能编辑</p>
 <p>又找到 <a class="link" href="https://www.jb51.net/article/245758.htm"  target="_blank" rel="noopener"
@@ -783,11 +783,11 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">xxx</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">xxx</span><span class="p">,</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">xxx</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">xxx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又因为其中一项需要根据类型动态赋不同值，没有在<code>this.form = {}</code>中赋值，因此此时form中是没有该项数据的，导致了不可编辑的问题，最后在其中加上<code>yyy: null</code>解决问题，如</p>
 <div class="highlight"><div class="chroma">
@@ -799,12 +799,12 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">xxx</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">xxx</span><span class="p">,</span>
-    <span class="p">...</span>
-    <span class="nx">yyy</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">xxx</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">xxx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">yyy</span><span class="o">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>PS. 这种赋值语句在需要改变对象的部分属性值时会导致其他属性丢失。如还是表单回显编辑场景下回传了数据项id至表单数据中，即form.id = 1; 而此时又有“在下拉框值变动时重置已填数据”的需求，如果在清空数据是采用此种方式赋值而没包含id会导致id数据丢失，继而导致更新数据失败。</p>
@@ -845,18 +845,18 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-dialog</span> <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;openUserDialog&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;1050px&#34;</span> <span class="na">append-to-body</span> <span class="na">center</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">user-dialog</span>
-    <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;openUserDialog&#34;</span>
-    <span class="na">ref</span><span class="o">=</span><span class="s">&#34;userDialog&#34;</span>
-    <span class="err">@</span><span class="na">echo</span><span class="o">=</span><span class="s">&#34;echoSelection&#34;</span>
-    <span class="err">@</span><span class="na">selectAll</span><span class="o">=</span><span class="s">&#34;selectAll&#34;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&#34;footer&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dialog-footer&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">el-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;handleUserSave&#34;</span><span class="p">&gt;</span>保 存<span class="p">&lt;/</span><span class="nt">el-button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">el-button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;openUserDialog = false&#34;</span><span class="p">&gt;</span>取 消<span class="p">&lt;/</span><span class="nt">el-button</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">el-dialog</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">el-dialog</span> <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;openUserDialog&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;1050px&#34;</span> <span class="na">append-to-body</span> <span class="na">center</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">user-dialog</span>
+</span></span><span class="line"><span class="cl">    <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;openUserDialog&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">ref</span><span class="o">=</span><span class="s">&#34;userDialog&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="na">echo</span><span class="o">=</span><span class="s">&#34;echoSelection&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="na">selectAll</span><span class="o">=</span><span class="s">&#34;selectAll&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&#34;footer&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dialog-footer&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">el-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;handleUserSave&#34;</span><span class="p">&gt;</span>保 存<span class="p">&lt;/</span><span class="nt">el-button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">el-button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;openUserDialog = false&#34;</span><span class="p">&gt;</span>取 消<span class="p">&lt;/</span><span class="nt">el-button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">el-dialog</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="vue父子组件动态传值及数据同步dialog为例">Vue父子组件动态传值及数据同步dialog为例</h2>
 <p>TODO.</p>
@@ -875,12 +875,12 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">user-single-dialog</span>
-  <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
-  <span class="na">width</span><span class="o">=</span><span class="s">&#34;1100px&#34;</span>
-  <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;userSglOpen&#34;</span>
-  <span class="err">@</span><span class="na">handleSelect</span><span class="o">=</span><span class="s">&#34;handleUserSelect&#34;</span><span class="p">/&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">user-single-dialog</span>
+</span></span><span class="line"><span class="cl">  <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">width</span><span class="o">=</span><span class="s">&#34;1100px&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;userSglOpen&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="na">handleSelect</span><span class="o">=</span><span class="s">&#34;handleUserSelect&#34;</span><span class="p">/&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -907,28 +907,28 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">UserSingleDialog</span> <span class="nx">from</span> <span class="s2">&#34;@/views/components/UserSingleDialog&#34;</span><span class="p">;</span>
-
-<span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">UserSingleDialog</span> <span class="p">}</span>
-
-<span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="nx">userSglOpen</span><span class="o">:</span> <span class="kc">false</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-  <span class="cm">/**
-</span><span class="cm">    * 对话框子组件emit触发并传递数据
-</span><span class="cm">    * @param selection 对话框选中的数据
-</span><span class="cm">    */</span>
-  <span class="nx">handleUserSelect</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 数据操作
-</span><span class="c1"></span>    <span class="c1">// ...
-</span><span class="c1"></span>  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">UserSingleDialog</span> <span class="nx">from</span> <span class="s2">&#34;@/views/components/UserSingleDialog&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">UserSingleDialog</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">userSglOpen</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * 对话框子组件emit触发并传递数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * @param selection 对话框选中的数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">handleUserSelect</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 数据操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>子组件中：通过props接收父组件的传值</p>
 <div class="highlight"><div class="chroma">
@@ -956,28 +956,28 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;用户选择&#39;</span>
-    <span class="p">},</span>
-    <span class="nx">visible</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="k">default</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;1100px&#39;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;用户选择&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">visible</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="k">default</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">width</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;1100px&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="子组件向父组件">子组件向父组件：</h3>
 <p>子组件通过使用<code>$emit</code>触发父组件的自定义事件</p>
@@ -996,17 +996,17 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">handleUserSave</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;handleSelect&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">selection</span><span class="p">);</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="p">},</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">handleUserSave</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;handleSelect&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">selection</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>父组件中在自定义事件触发时调用相应方法获取并操作数据</p>
 <div class="highlight"><div class="chroma">
@@ -1024,18 +1024,18 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">user-single-dialog</span>
-      <span class="na">ref</span><span class="o">=</span><span class="s">&#34;userSglDialog&#34;</span>
-      <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
-      <span class="na">width</span><span class="o">=</span><span class="s">&#34;1100px&#34;</span>
-      <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;userSglOpen&#34;</span>
-      <span class="err">@</span><span class="na">echo</span><span class="o">=</span><span class="s">&#34;echoSelection&#34;</span>
-      <span class="err">@</span><span class="na">handleSelect</span><span class="o">=</span><span class="s">&#34;handleUserSelect&#34;</span><span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">user-single-dialog</span>
+</span></span><span class="line"><span class="cl">      <span class="na">ref</span><span class="o">=</span><span class="s">&#34;userSglDialog&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">:title</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">width</span><span class="o">=</span><span class="s">&#34;1100px&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">:visible</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;userSglOpen&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="err">@</span><span class="na">echo</span><span class="o">=</span><span class="s">&#34;echoSelection&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="err">@</span><span class="na">handleSelect</span><span class="o">=</span><span class="s">&#34;handleUserSelect&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1060,26 +1060,26 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="kr">import</span> <span class="nx">UserSingleDialog</span> <span class="nx">from</span> <span class="s2">&#34;@/views/components/UserSingleDialog&#34;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;sample&#34;</span><span class="p">,</span>
-  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">UserSingleDialog</span> <span class="p">},</span>
-  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-    <span class="cm">/**
-</span><span class="cm">     * 对话框子组件emit触发并传递数据
-</span><span class="cm">     * @param selection 对话框选中的数据
-</span><span class="cm">     */</span>
-    <span class="nx">handleUserSelect</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">user_names</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">user_name</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">echoId</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">user_id</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">UserSingleDialog</span> <span class="nx">from</span> <span class="s2">&#34;@/views/components/UserSingleDialog&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;sample&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">UserSingleDialog</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 对话框子组件emit触发并传递数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param selection 对话框选中的数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">handleUserSelect</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">user_names</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">user_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">echoId</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">user_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="父子组件数据同步">父子组件数据同步：</h3>
 <p><code>.sync</code> 修饰符</p>
@@ -1092,8 +1092,8 @@ data -&gt; string -&gt; obj</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">comp</span> <span class="na">:foo</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;bar&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">comp</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">comp</span> <span class="na">:foo</span><span class="err">.</span><span class="na">sync</span><span class="o">=</span><span class="s">&#34;bar&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">comp</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>会被扩展为：</p>
 <div class="highlight"><div class="chroma">
@@ -1101,8 +1101,8 @@ data -&gt; string -&gt; obj</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">comp</span> <span class="na">:foo</span><span class="o">=</span><span class="s">&#34;bar&#34;</span> <span class="err">@</span><span class="na">update:foo</span><span class="o">=</span><span class="s">&#34;val =&gt; bar = val&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">comp</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">comp</span> <span class="na">:foo</span><span class="o">=</span><span class="s">&#34;bar&#34;</span> <span class="err">@</span><span class="na">update:foo</span><span class="o">=</span><span class="s">&#34;val =&gt; bar = val&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">comp</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：</p>
 <div class="highlight"><div class="chroma">
@@ -1110,8 +1110,8 @@ data -&gt; string -&gt; obj</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;update:foo&#39;</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;update:foo&#39;</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>因此<code>.sync</code> 修饰符的作用是当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定。</p>
 <p>说是v-model也能实现？</p>
@@ -1139,26 +1139,26 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">visible</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">open</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">handler</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;update:visible&#39;</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
-      <span class="p">},</span>
-      <span class="nx">deep</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">immediate</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">visible</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">open</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">handler</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;update:visible&#39;</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">deep</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">immediate</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="elementui-el-form-item标签和输入控件在页面缩放时不在同一行">elementui el-form-item标签和输入控件在页面缩放时不在同一行</h2>
 <p>运用el-form自带属性 <code>:inline</code></p>
@@ -1168,8 +1168,8 @@ data -&gt; string -&gt; obj</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">el-form</span> <span class="na">:inline</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">:model</span><span class="o">=</span><span class="s">&#34;formInline&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;demo-form-inline&#34;</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">el-form</span> <span class="na">:inline</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">:model</span><span class="o">=</span><span class="s">&#34;formInline&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;demo-form-inline&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但是如果设置了栅格布局 <code>el-row</code> + <code>el-col</code> 时，el-col的span属性会设定长度比例，此时缩放页面依旧会样式变化，因此需将表单中布局删除</p>
 <h2 id="ref-在-v-for-undefined">ref 在 v-for undefined</h2>
@@ -1192,16 +1192,16 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(question, index) in voteIns.questions&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;question.question_id&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">el-radio-group</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;small&#34;</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;question.question_type == 0&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;radioList[index]&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">el-radio</span>
-      <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(option, idx) in question.options&#34;</span>
-      <span class="na">:key</span><span class="o">=</span><span class="s">&#34;idx&#34;</span>
-      <span class="na">ref</span><span class="o">=</span><span class="s">&#34;check&#34;</span>
-      <span class="na">:label</span><span class="o">=</span><span class="s">&#34;option.option_id&#34;</span>
-  <span class="p">&gt;</span>{{option.option_content}}<span class="p">&lt;/</span><span class="nt">el-radio</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(question, index) in voteIns.questions&#34;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&#34;question.question_id&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">el-radio-group</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;small&#34;</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;question.question_type == 0&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;radioList[index]&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">el-radio</span>
+</span></span><span class="line"><span class="cl">      <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(option, idx) in question.options&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">:key</span><span class="o">=</span><span class="s">&#34;idx&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">ref</span><span class="o">=</span><span class="s">&#34;check&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">:label</span><span class="o">=</span><span class="s">&#34;option.option_id&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&gt;</span>{{option.option_content}}<span class="p">&lt;/</span><span class="nt">el-radio</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在mounted中打印refs的DOM元素，结果为undefined</p>
 <div class="highlight"><div class="chroma">
@@ -1210,9 +1210,9 @@ data -&gt; string -&gt; obj</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$refs {paperDetailForm: VueComponent}
-$refs.check undefined
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$refs {paperDetailForm: VueComponent}
+</span></span><span class="line"><span class="cl">$refs.check undefined
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>原因是在mounted周期中，只是把组件模板的静态数据渲染了，动态绑定的Dom并没有初始化，所以在mounted周期里面获取不到DOM元素。
 解决方法也如该博主所说：在数据加载并绑定之后操作DOM</p>
@@ -1226,13 +1226,13 @@ $refs.check undefined
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">$nextTick</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">check</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">check</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">className</span> <span class="o">=</span> <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span><span class="p">;</span>
-        <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">className</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/is-disabled/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$nextTick</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">check</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">check</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">className</span> <span class="o">=</span> <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">check</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">className</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/is-disabled/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>

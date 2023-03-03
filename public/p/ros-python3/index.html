@@ -132,14 +132,14 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
         
 
         <li >
-            <a href='/about/' >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
                 
                 
                 
@@ -152,7 +152,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -356,8 +356,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">ImportError: dynamic module does not define module export function (PyInit_cv_bridge_boost)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nc">ImportError</span><span class="p">:</span> <span class="nv">dynamic</span> <span class="kn">module</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">define</span> <span class="kn">module</span> <span class="nv">export</span> <span class="nv">function</span> <span class="p">(</span><span class="nc">PyInit_cv_bridge_boost</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>tf tf2报错</strong></p>
 <div class="highlight"><div class="chroma">
@@ -365,8 +365,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">ImportError: dynamic module does not define module export function (PyInit__tf2)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nc">ImportError</span><span class="p">:</span> <span class="nv">dynamic</span> <span class="kn">module</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">define</span> <span class="kn">module</span> <span class="nv">export</span> <span class="nv">function</span> <span class="p">(</span><span class="nc">PyInit__tf2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解决的关键在于使用python3编译，可以通过下面参数进行cmake</p>
 <div class="highlight"><div class="chroma">
@@ -374,8 +374,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">-DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这里介绍常用的catkin工具进行编译</p>
 <h3 id="ros-wiki中对于软件包的介绍">ROS Wiki中对于软件包的介绍</h3>
@@ -400,8 +400,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-cv-bridge
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-cv-bridge
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="创建catkin工作空间">创建catkin工作空间</h3>
 <div class="highlight"><div class="chroma">
@@ -409,8 +409,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">mkdir -p cvbdg_ws/src
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p cvbdg_ws/src
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -418,9 +418,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> cvbdg_ws
-catkin init
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> cvbdg_ws
+</span></span><span class="line"><span class="cl">catkin init
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="配置catkin编译参数">配置catkin编译参数</h3>
 <p>设置使用python3编译</p>
@@ -429,8 +429,8 @@ catkin init
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="设置编译安装位置">设置编译安装位置</h3>
 <p>位于$CATKIN_WORKSPACE/install 目录下</p>
@@ -439,8 +439,8 @@ catkin init
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">catkin config --install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">catkin config --install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-cv_bridge-源码">clone cv_bridge 源码</h3>
 <div class="highlight"><div class="chroma">
@@ -448,8 +448,8 @@ catkin init
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="检查版本">检查版本</h3>
 <div class="highlight"><div class="chroma">
@@ -459,10 +459,10 @@ catkin init
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt-cache show ros-kinetic-cv-bridge | grep Version
-# 结果
-Version: 1.13.0-0bionic.20210505.0322380
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt-cache show ros-kinetic-cv-bridge | grep Version
+</span></span><span class="line"><span class="cl"># 结果
+</span></span><span class="line"><span class="cl">Version: 1.13.0-0bionic.20210505.0322380
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="检查git仓库中是否有对应版本并检出">检查git仓库中是否有对应版本并检出</h3>
 <div class="highlight"><div class="chroma">
@@ -473,11 +473,11 @@ Version: 1.13.0-0bionic.20210505.0322380
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> src/vision_opencv/
-git checkout 1.13.0
-<span class="c1">#返回工作空间主目录</span>
-<span class="nb">cd</span> ../../
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> src/vision_opencv/
+</span></span><span class="line"><span class="cl">git checkout 1.13.0
+</span></span><span class="line"><span class="cl"><span class="c1">#返回工作空间主目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ../../
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="编译cv-bridge">编译cv bridge</h3>
 <div class="highlight"><div class="chroma">
@@ -485,8 +485,8 @@ git checkout 1.13.0
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">catkin build cv_bridge
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">catkin build cv_bridge
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="设置环境变量">设置环境变量</h3>
 <p>使用 <code>--extend</code> 命令source附加环境变量</p>
@@ -495,8 +495,8 @@ git checkout 1.13.0
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> install/setup.bash --extend
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">source</span> install/setup.bash --extend
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>因为每次使用都需要这样的<code>source</code>操作，可以将其加入 <code>.bashrc</code> 中打开终端自动执行</p>
 <div class="highlight"><div class="chroma">
@@ -504,8 +504,8 @@ git checkout 1.13.0
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/cvbdg_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/cvbdg_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="测试">测试</h3>
 <div class="highlight"><div class="chroma">
@@ -519,14 +519,14 @@ git checkout 1.13.0
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ python3
-
-Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span>
-<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
-Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt; from cv_bridge.boost.cv_bridge_boost import getCvType
-&gt;&gt;&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
+</span></span><span class="line"><span class="cl">Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; from cv_bridge.boost.cv_bridge_boost import getCvType
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果没有再出现错误即编译安装成功</p>
 <h2 id="tf-tf2">TF TF2</h2>
@@ -537,8 +537,8 @@ Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-geometry ros-melodic-geometry2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-geometry ros-melodic-geometry2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建catkin工作空间</p>
 <div class="highlight"><div class="chroma">
@@ -546,8 +546,8 @@ Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">mkdir -p tf_ws/src
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p tf_ws/src
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -555,9 +555,9 @@ Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> tf_ws
-catkin init
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> tf_ws
+</span></span><span class="line"><span class="cl">catkin init
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="配置catkin编译参数-1">配置catkin编译参数</h3>
 <p>设置使用python3编译</p>
@@ -566,8 +566,8 @@ catkin init
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">catkin config -DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">catkin config -DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="设置编译安装位置-1">设置编译安装位置</h3>
 <p>位于$CATKIN_WORKSPACE/install 目录下</p>
@@ -576,8 +576,8 @@ catkin init
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">catkin config --install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">catkin config --install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-源码">clone 源码</h3>
 <div class="highlight"><div class="chroma">
@@ -586,9 +586,9 @@ catkin init
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone -b melodic-devel https://github.com/ros/geometry
-git clone -b melodic-devel https://github.com/ros/geometry2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone -b melodic-devel https://github.com/ros/geometry
+</span></span><span class="line"><span class="cl">git clone -b melodic-devel https://github.com/ros/geometry2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="检查版本-1">检查版本</h3>
 <p>检查系统中安装的软件包版本</p>
@@ -599,10 +599,10 @@ git clone -b melodic-devel https://github.com/ros/geometry2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">apt-cache show ros-melodic-geometry <span class="p">|</span> grep Version
-<span class="c1"># 结果</span>
-Version: 1.12.1-1bionic.20210505.035349
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">apt-cache show ros-melodic-geometry <span class="p">|</span> grep Version
+</span></span><span class="line"><span class="cl"><span class="c1"># 结果</span>
+</span></span><span class="line"><span class="cl">Version: 1.12.1-1bionic.20210505.035349
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="编译tf-tf2">编译tf tf2</h3>
 <div class="highlight"><div class="chroma">
@@ -610,8 +610,8 @@ Version: 1.12.1-1bionic.20210505.035349
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">catkin build
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">catkin build
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="环境变量">环境变量</h3>
 <p>使用 <code>--extend</code> 命令source附加环境变量</p>
@@ -620,8 +620,8 @@ Version: 1.12.1-1bionic.20210505.035349
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> install/setup.bash --extend
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">source</span> install/setup.bash --extend
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>加入 .bashrc 中打开终端自动执行</p>
 <div class="highlight"><div class="chroma">
@@ -629,8 +629,8 @@ Version: 1.12.1-1bionic.20210505.035349
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/tf_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;source </span><span class="nv">$HOME</span><span class="s2">/tf_ws/install/setup.bash --extend&#34;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="测试-1">测试</h3>
 <div class="highlight"><div class="chroma">
@@ -644,14 +644,14 @@ Version: 1.12.1-1bionic.20210505.035349
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ python3
-
-Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span>
-<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
-Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt; import tf
-&gt;&gt;&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Python 3.5.2 <span class="o">(</span>default, Nov <span class="m">23</span> 2017, 16:37:01<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
+</span></span><span class="line"><span class="cl">Type <span class="s2">&#34;help&#34;</span>, <span class="s2">&#34;copyright&#34;</span>, <span class="s2">&#34;credits&#34;</span> or <span class="s2">&#34;license&#34;</span> <span class="k">for</span> more information.
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; import tf
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果没有再出现错误即编译安装成功</p>
 <blockquote>
