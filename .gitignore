@@ -1,2 +1,3 @@
 # ignore publish 
-publish/*
+public/*
+.DS_Store
