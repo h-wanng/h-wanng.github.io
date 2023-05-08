@@ -59,7 +59,10 @@ catkin init
 ```
 catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 ```
+> 其中`/usr/include/python3.6m` `/usr/lib/x86_64-linux-gnu/libpython3.6m.so` 是系统中python3解释器及相关库文件位置，根据具体情况替换
+
 ### 设置编译安装位置
+
 位于$CATKIN_WORKSPACE/install 目录下
 ```
 catkin config --install
