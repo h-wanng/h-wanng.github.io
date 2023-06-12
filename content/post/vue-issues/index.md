@@ -612,3 +612,31 @@ this.$nextTick(() => {
     });
 })
 ```
+
+## ElementUI @keyup.enter.native 输入框回车事件导致页面刷新
+
+如表单为:
+
+```html
+<el-form :model="groupQueryParams" ref="groupQueryForm" size="small" :inline="true" label-width="68px" @submit.native.prevent>
+  <el-form-item prop="name">
+    <el-input
+              v-model="groupQueryParams.name"
+              placeholder="请输入分组名称"
+              clearable
+              @keyup.enter.native="handleQuery(1)"
+              />
+  </el-form-item>
+  <el-form-item>
+    <el-button type="primary" plain size="mini" @click="handleQuery(1)">搜索</el-button>
+    <el-button plain size="mini" @click="resetQuery(1)">重置</el-button>
+  </el-form-item>
+</el-form>
+```
+
+表单`groupQueryForm`中只有一个输入框，回车事件时并没有触发事件而是刷新了页面。
+
+https://blog.csdn.net/daipianpian/article/details/127105154
+
+『W3C标准的说法是：**当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。**如果希望阻止这一默认行为，可以在标签上添加**@submit.native.prevent**。』
+
