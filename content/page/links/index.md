@@ -27,7 +27,7 @@ menu:
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
+Links Page.
 <!--
 This page's frontmatter:
 
