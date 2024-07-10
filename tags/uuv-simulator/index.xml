@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>UUV Simulator on Docs</title>
-        <link>https://h-wanng.github.io/tags/uuv-simulator/</link>
+        <link>http://localhost:1313/tags/uuv-simulator/</link>
         <description>Recent content in UUV Simulator on Docs</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/tags/uuv-simulator/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/uuv-simulator/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>UUV Simulator Installation</title>
-        <link>https://h-wanng.github.io/p/uuv-simulator-installation/</link>
+        <link>http://localhost:1313/p/uuv-simulator-installation/</link>
         <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://h-wanng.github.io/p/uuv-simulator-installation/</guid>
-        <description>&lt;img src="https://h-wanng.github.io/p/uuv-simulator-installation/ocean_waves.png" alt="Featured image of post UUV Simulator Installation" /&gt;&lt;h2 id=&#34;0-依赖&#34;&gt;0 依赖&lt;/h2&gt;
+        <guid>http://localhost:1313/p/uuv-simulator-installation/</guid>
+        <description>&lt;img src="http://localhost:1313/p/uuv-simulator-installation/ocean_waves.png" alt="Featured image of post UUV Simulator Installation" /&gt;&lt;h2 id=&#34;0-依赖&#34;&gt;0 依赖&lt;/h2&gt;
 &lt;p&gt;UUV Simulator是基于&lt;code&gt;ROS&lt;/code&gt;与&lt;code&gt;Gazebo&lt;/code&gt;开发实现的，其安装依赖&lt;code&gt;ROS&lt;/code&gt;和&lt;code&gt;catkin&lt;/code&gt;工具&lt;/p&gt;
 &lt;h3 id=&#34;01-ros&#34;&gt;0.1 ROS&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Ubuntu18.04&lt;/code&gt; 对应 &lt;code&gt;ROS Melodic&lt;/code&gt;&lt;/p&gt;
@@ -120,10 +120,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;launch文件启动Gazebo后显示如下场景即安装成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/uuv-simulator-installation/gazebo-screenshot.png&#34;
 	width=&#34;1842&#34;
 	height=&#34;1252&#34;
-	srcset=&#34;https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot_hu06f035b402cb1b702b0bc03095d797ac_1217719_480x0_resize_box_3.png 480w, https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot_hu06f035b402cb1b702b0bc03095d797ac_1217719_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/uuv-simulator-installation/gazebo-screenshot_hu06f035b402cb1b702b0bc03095d797ac_1217719_480x0_resize_box_3.png 480w, http://localhost:1313/p/uuv-simulator-installation/gazebo-screenshot_hu06f035b402cb1b702b0bc03095d797ac_1217719_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;ocean_waves 场景&#34;

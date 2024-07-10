@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>css on Docs</title>
-        <link>https://h-wanng.github.io/tags/css/</link>
-        <description>Recent content in css on Docs</description>
+        <title>Css on Docs</title>
+        <link>http://localhost:1313/tags/css/</link>
+        <description>Recent content in Css on Docs</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CSS超长内容自动滚动</title>
+        <link>http://localhost:1313/p/css%E8%B6%85%E9%95%BF%E5%86%85%E5%AE%B9%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8/</link>
+        <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/css%E8%B6%85%E9%95%BF%E5%86%85%E5%AE%B9%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8/</guid>
+        <description>&lt;h2 id=&#34;css超长内容自动滚动&#34;&gt;CSS超长内容自动滚动&lt;/h2&gt;
+&lt;p&gt;场景为在限定的空间（宽度）内展示超出容器宽度范围的内容。此时若按不换行的方式展示，内容必定被遮挡，用户无法获取完整信息内容。当然可以尝试让超出显示为省略号，鼠标移入时展示完整内容。但此类方法有限制，如用户友好性低、复杂场景难实现等问题。&lt;/p&gt;
+&lt;p&gt;因此&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Markdown Syntax Guide</title>
-        <link>https://h-wanng.github.io/p/markdown-syntax-guide/</link>
+        <link>http://localhost:1313/p/markdown-syntax-guide/</link>
         <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://h-wanng.github.io/p/markdown-syntax-guide/</guid>
-        <description>&lt;img src="https://h-wanng.github.io/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
+        <guid>http://localhost:1313/p/markdown-syntax-guide/</guid>
+        <description>&lt;img src="http://localhost:1313/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
 &lt;h2 id=&#34;headings&#34;&gt;Headings&lt;/h2&gt;
 &lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
 &lt;h1 id=&#34;h1&#34;&gt;H1&lt;/h1&gt;
