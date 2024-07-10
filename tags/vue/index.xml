@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Vue on Docs</title>
-        <link>http://localhost:1313/tags/vue/</link>
+        <link>https://h-wanng.github.io/tags/vue/</link>
         <description>Recent content in Vue on Docs</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vue/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Vue &amp; JS Issues</title>
-        <link>http://localhost:1313/p/vue-js-issues/</link>
+        <link>https://h-wanng.github.io/p/vue-js-issues/</link>
         <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/vue-js-issues/</guid>
+        <guid>https://h-wanng.github.io/p/vue-js-issues/</guid>
         <description>&lt;h2 id=&#34;ruoyi-字典取值并回显到页面&#34;&gt;Ruoyi 字典取值并回显到页面&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -492,10 +492,10 @@ data -&amp;gt; string -&amp;gt; obj&lt;/p&gt;
     &gt;https://www.jianshu.com/p/2a11d95ffd2e&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;“经过测试发现，把el-dialog标签写在父组件不写在子组件再使用destroy-on-close属性，实际它只能初始化dialog组件内部包裹的子组件data数据！！而且子组件的生命周期函数钩子会在关闭弹窗后还会执行一次！！，这样就感觉destroy-on-close很鸡肋”&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;这种情况是el-dialog标签在父组件中，但其中包裹的内容封装在子组件中。那此时使用el-dialog的destroy-on-close虽然能够重置子组件中数据但子组件的生命周期会变的很奇怪。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vue-js-issues/assets/el-dialog-life-cycle.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle.png&#34;
 	width=&#34;907&#34;
 	height=&#34;246&#34;
-	srcset=&#34;http://localhost:1313/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_480x0_resize_box_3.png 480w, http://localhost:1313/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_480x0_resize_box_3.png 480w, https://h-wanng.github.io/p/vue-js-issues/assets/el-dialog-life-cycle_huf81d472d461369c8b9a1456505817a30_53795_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;el-dialog-life-cycle&#34;

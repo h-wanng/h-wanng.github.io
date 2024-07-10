@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MySQL on Docs</title>
-        <link>http://localhost:1313/categories/mysql/</link>
+        <link>https://h-wanng.github.io/categories/mysql/</link>
         <description>Recent content in MySQL on Docs</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MySQL 特定值在结果中的位置</title>
-        <link>http://localhost:1313/p/mysql-%E7%89%B9%E5%AE%9A%E5%80%BC%E5%9C%A8%E7%BB%93%E6%9E%9C%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE/</link>
+        <link>https://h-wanng.github.io/p/mysql-%E7%89%B9%E5%AE%9A%E5%80%BC%E5%9C%A8%E7%BB%93%E6%9E%9C%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE/</link>
         <pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/mysql-%E7%89%B9%E5%AE%9A%E5%80%BC%E5%9C%A8%E7%BB%93%E6%9E%9C%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE/</guid>
+        <guid>https://h-wanng.github.io/p/mysql-%E7%89%B9%E5%AE%9A%E5%80%BC%E5%9C%A8%E7%BB%93%E6%9E%9C%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE/</guid>
         <description>&lt;h2 id=&#34;mysql-特定值在结果中的位置序号&#34;&gt;MySQL 特定值在结果中的位置（序号）&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
