@@ -50,7 +50,7 @@ params:
 
     sidebar:
         emoji: 💤
-        subtitle: W' Docs/Blog.
+        subtitle: 莫听穿林打叶声，何妨吟啸且徐行。
         avatar:
             enabled: true
             local: true

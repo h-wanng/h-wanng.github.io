@@ -14,7 +14,7 @@
                     <img src="{{ .src }}" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
                 {{ else }}
                     {{ $avatar := resources.Get (.src) }}
-                    
+
                     {{ if $avatar }}
                         {{ $avatarResized := $avatar.Resize "300x" }}
                         <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
@@ -30,28 +30,10 @@
             </figure>
             {{ end }}
         {{ end }}
-        
+
         <div class="site-meta">
             <h1 class="site-name"><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a></h1>
-            <h2 class="site-description">
-                <div>
-                    <span id="poem_sentence" style="display:-moz-inline-box; display:inline-block; ">
-                        正在加载今日诗词....
-                    </span><br>
-                    <span id="poem_info" style="display: inline-block;margin-top: 10px; float:right;">
-                        ....
-                    </span>
-                </div>
-                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-                <script type="text/javascript">
-                    jinrishici.load(function(result) {
-                    var sentence = document.querySelector("#poem_sentence")
-                    var info = document.querySelector("#poem_info")
-                    sentence.innerHTML = result.data.content
-                    info.innerHTML = '——' + result.data.origin.author
-                    });
-                </script>
-            </h2>
+            <h2 class="site-description">{{ .Site.Params.sidebar.subtitle }}</h2>
         </div>
     </header>
 
@@ -59,7 +41,7 @@
         <ol class="social-menu">
             {{ range . }}
                 <li>
-                    <a 
+                    <a
                         href='{{ .URL }}'
                         {{ if eq (default true .Params.newTab) true }}target="_blank"{{ end }}
                         {{ with .Name }}title="{{ . }}"{{ end }}
@@ -96,7 +78,7 @@
         <div class="menu-bottom-section">
             {{- $currentLanguageCode := .Language.Lang -}}
             {{ with .Site.Home.AllTranslations }}
-                <li id="i18n-switch">  
+                <li id="i18n-switch">
                     {{ partial "helper/icon" "language" }}
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         {{ range . }}
@@ -105,7 +87,7 @@
                     </select>
                 </li>
             {{ end }}
-            
+
             {{ if (default false .Site.Params.colorScheme.toggle) }}
                 <li id="dark-mode-toggle">
                     {{ partial "helper/icon" "toggle-left" }}
