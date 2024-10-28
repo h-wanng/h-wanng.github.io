@@ -1,5 +1,6 @@
 # ignore publish
 /public
-/public/*
+/public/
 /resources
+/resources/
 */.DS_Store
