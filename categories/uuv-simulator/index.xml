@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UUV Simulator on Docs</title><link>https://h-wanng.github.io/categories/uuv-simulator/</link><description>Recent content in UUV Simulator on Docs</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://h-wanng.github.io/categories/uuv-simulator/index.xml" rel="self" type="application/rss+xml"/><item><title>UUV Simulator Installation</title><link>https://h-wanng.github.io/p/uuv-simulator-installation/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://h-wanng.github.io/p/uuv-simulator-installation/</guid><description>&lt;img src="https://h-wanng.github.io/p/uuv-simulator-installation/ocean_waves.png" alt="Featured image of post UUV Simulator Installation" />&lt;h2 id="0-依赖">0 依赖&lt;/h2>
+&lt;p>UUV Simulator是基于&lt;code>ROS&lt;/code>与&lt;code>Gazebo&lt;/code>开发实现的，其安装依赖&lt;code>ROS&lt;/code>和&lt;code>catkin&lt;/code>工具&lt;/p>
+&lt;h3 id="01-ros">0.1 ROS&lt;/h3>
+&lt;p>&lt;code>Ubuntu18.04&lt;/code> 对应 &lt;code>ROS Melodic&lt;/code>&lt;/p>
+&lt;p>ROS的安装请参考 &lt;a class="link" href="https://h-wanng.github.io/p/ros-melodic-installation/" target="_blank" rel="noopener"
+>Docs中简单的安装介绍&lt;/a> 或 &lt;a class="link" href="https://wiki.ros.org/ROS/Installation" target="_blank" rel="noopener"
+>melodic/Installation/Ubuntu - ROS Wiki&lt;/a>&lt;/p>
+&lt;h3 id="02-catkin_tools">0.2 catkin_tools&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo apt-get install python3-catkin-tools
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="1-安装">1 安装&lt;/h2>
+&lt;p>源码安装基于 &lt;code>ROS Melodic&lt;/code> 和 &lt;code>Gazebo9&lt;/code> 的 &lt;code>uuv-simulator&lt;/code>.&lt;/p>
+&lt;h3 id="11-创建ros工作空间">1.1 创建ROS工作空间&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">mkdir -p ~/catkin_ws/src
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/catkin_ws/src
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="12-初始化catkin工作空间">1.2 初始化catkin工作空间&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/catkin_ws
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">catkin init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="13-clone源码">1.3 clone源码&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/catkin_ws/src
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://github.com/uuvsimulator/uuv_simulator.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 若从git clone 失败，使用国内 gitee 地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># git clone https://gitee.com/h_wanng/uuv_simulator.git&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="14-软件包依赖安装">1.4 软件包依赖安装&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>: 如果安装ROS过程中最后一步依赖更新 &lt;code>rosdep update&lt;/code> 失败，那么将会很大概率会影响本步操作。&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/catkin_ws
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rosdep install --from-paths src --ignore-src --rosdistro&lt;span class="o">=&lt;/span>melodic -y --skip-keys &lt;span class="s2">&amp;#34;gazebo gazebo_msgs gazebo_plugins gazebo_ros gazebo_ros_control gazebo_ros_pkgs&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="15-编译">1.5 编译&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/catkin_ws
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">catkin_make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>: 编译过程比较耗费内存，如果报错大多和内存相关。可以尝试：&lt;/p>
+&lt;ol>
+&lt;li>重复编译操作；&lt;/li>
+&lt;li>增加虚拟内存(Swap)&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;h3 id="16-配置环境变量">1.6 配置环境变量&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;source &lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/catkin_ws/devel/setup.bash&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="17-测试">1.7 测试&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">roslaunch uuv_gazebo_worlds ocean_waves.launch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>launch文件启动Gazebo后显示如下场景即安装成功&lt;/p>
+&lt;p>&lt;img src="https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot.png"
+width="1842"
+height="1252"
+srcset="https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot_hu2439789618691567509.png 480w, https://h-wanng.github.io/p/uuv-simulator-installation/gazebo-screenshot_hu6113234780476519894.png 1024w"
+loading="lazy"
+alt="ocean_waves 场景"
+class="gallery-image"
+data-flex-grow="147"
+data-flex-basis="353px"
+>&lt;/p></description></item></channel></rss>
