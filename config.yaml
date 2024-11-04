@@ -3,7 +3,7 @@ languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
 title: Docs
-
+timeout: "300s"
 languages:
     en:
         languageName: English
